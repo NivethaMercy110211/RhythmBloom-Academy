@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Recitals, Rehearsals & Studio Moments | RhythmBloom Academy</title>
+  <meta name="description" content="Browse the RhythmBloom Academy photo gallery featuring recital performances, classroom moments, rehearsals, backstage preparations and studio life." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700;9..40,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/dark-theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/desktop.css" />
+  <link rel="stylesheet" href="css/tablet.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <style>
+    .page-hero { padding:100px 0 72px; background:linear-gradient(135deg,var(--primary) 0%,#9B6BA0 100%); position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; top:-80px; right:-80px; width:400px; height:400px; border-radius:50%; background:rgba(255,255,255,.06); }
+
+    /* ── Trendy two-column gallery grid ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-auto-rows: 320px;
+      grid-auto-flow: dense;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      min-width: 0;
+      aspect-ratio: auto;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+    .gallery-item.span-2 {
+      grid-column: span 1;
+    }
+    .gallery-item.tall {
+      grid-row: span 2;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item.headshot-focus img { object-position:center top; }
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(41,37,43,0.85) 0%, rgba(41,37,43,0.2) 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+    .gallery-item-label {
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+    .gallery-item-cat {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: white;
+      background: rgba(255,255,255,0.22);
+      backdrop-filter: blur(8px);
+      padding: 3px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .gallery-filter-btn {
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      border: 1px solid var(--divider);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      transition: all var(--trans-fast);
+      cursor: pointer;
+    }
+    .gallery-filter-btn:hover,
+    .gallery-filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      box-shadow: 0 4px 12px rgba(99,58,104,0.25);
+    }
+    @media(max-width: 992px) {
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 240px; gap: 14px; }
+      .gallery-item.span-2 { grid-column: span 1; }
+    }
+    @media(max-width: 576px) {
+      .gallery-grid { grid-template-columns: 1fr !important; grid-auto-rows: 240px; gap: 10px; }
+      .gallery-item.span-2, .gallery-item.tall { grid-column: span 1 !important; grid-row: span 1 !important; }
+      .gallery-item-overlay { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="rb-navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="rb-brand">
+      <div class="rb-logo-wrap">
+        <img src="images/logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-light" />
+        <img src="images/dark_logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-dark" style="display:none;" />
+      </div>
+      <div class="rb-brand-text"><span class="rb-brand-name">RhythmBloom Academy</span><span class="rb-brand-tagline">Move. Perform. Shine.</span></div>
+    </a>
+    <nav class="rb-nav"><ul class="rb-nav-list">
+      <li><a href="index.html" class="rb-nav-link">Home 1</a></li>
+      <li><a href="home-2.html" class="rb-nav-link">Home 2</a></li>
+      <li><a href="about.html" class="rb-nav-link">About</a></li>
+      <li><a href="programs.html" class="rb-nav-link">Programs</a></li>
+      <li><a href="instructors.html" class="rb-nav-link">Instructors</a></li>
+      <li><a href="schedule.html" class="rb-nav-link">Schedule</a></li>
+      <li><a href="gallery.html" class="rb-nav-link active">Gallery</a></li>
+      <li><a href="contact.html" class="rb-nav-link">Contact</a></li>
+    </ul></nav>
+    <div class="rb-nav-right">
+      <button class="rb-icon-btn" data-theme-toggle aria-label="Toggle theme"><i class="bi bi-sun theme-icon-light"></i><i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i></button>
+      <button class="rb-icon-btn" data-dir-toggle aria-label="Toggle RTL"><span class="dir-label" style="font-size:.7rem;font-weight:700">RTL</span></button>
+      <a href="dashboard.html" class="btn-primary"><i class="bi bi-grid-1x2"></i> Parent Dashboard</a>
+      <a href="login.html" class="btn-secondary">Login</a>
+    </div>
+    <div class="rb-toggler">
+      <button class="rb-menu-toggle" aria-label="Open menu"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</nav>
+<div class="rb-mobile-menu">
+  <ul class="rb-mobile-nav-list">
+    <li><a href="index.html" class="rb-mobile-nav-link">Home 1</a></li>
+    <li><a href="home-2.html" class="rb-mobile-nav-link">Home 2</a></li>
+    <li><a href="about.html" class="rb-mobile-nav-link">About</a></li>
+    <li><a href="programs.html" class="rb-mobile-nav-link">Programs</a></li>
+    <li><a href="instructors.html" class="rb-mobile-nav-link">Instructors</a></li>
+    <li><a href="schedule.html" class="rb-mobile-nav-link">Schedule</a></li>
+    <li><a href="gallery.html" class="rb-mobile-nav-link active">Gallery</a></li>
+    <li><a href="contact.html" class="rb-mobile-nav-link">Contact</a></li>
+  </ul>
+  <div class="rb-mobile-actions">
+    <a href="dashboard.html" class="btn-primary" style="width:100%;justify-content:center;"><i class="bi bi-grid-1x2"></i> Parent Dashboard</a>
+    <a href="login.html" class="btn-secondary" style="width:100%;justify-content:center;">Login</a>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:6px;">
+      <button class="rb-icon-btn" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+        <i class="bi bi-sun theme-icon-light"></i>
+        <i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i>
+      </button>
+      <button class="rb-icon-btn" data-dir-toggle title="Switch to RTL" aria-label="Switch to RTL">
+        <span class="dir-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="images/gallery-hero.png" alt="Gallery hero banner" /></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="text-center" style="color:white;position:relative;z-index:1;">
+      <span style="display:inline-block;font-size:var(--text-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:14px;">Academy Life</span>
+      <h1 style="font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.25rem);font-weight:600;color:white;margin-bottom:16px;letter-spacing:-.02em;">Our Gallery</h1>
+      <p style="font-size:1.0625rem;color:rgba(255,255,255,.82);max-width:520px;margin:0 auto;">From the first studio step to standing ovations — a visual journey through the magic of RhythmBloom Academy.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <!-- Category Filters -->
+    <div class="gallery-filters reveal" role="group" aria-label="Filter gallery by category">
+      <button class="gallery-filter-btn active" data-filter="all">All</button>
+      <button class="gallery-filter-btn" data-filter="recitals">Recitals</button>
+      <button class="gallery-filter-btn" data-filter="classroom">Classroom</button>
+      <button class="gallery-filter-btn" data-filter="rehearsals">Rehearsals</button>
+      <button class="gallery-filter-btn" data-filter="dance">Dance</button>
+      <button class="gallery-filter-btn" data-filter="drama">Drama</button>
+      <button class="gallery-filter-btn" data-filter="vocals">Vocals</button>
+      <button class="gallery-filter-btn" data-filter="backstage">Backstage</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid reveal" id="gallery-grid">
+
+      <div class="gallery-item span-2" data-category="recitals" tabindex="0" role="button" aria-label="Annual Showcase 2025 — Recitals">
+        <img src="images/performance_Moment.png" alt="Annual Showcase 2025 stage performance" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Annual Showcase 2025</div>
+          <div class="gallery-item-cat">Recitals</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="dance" tabindex="0" role="button" aria-label="Bharatanatyam performance — Dance">
+        <img src="images/classical_practice.png" alt="Bharatanatyam classical dance" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Bharatanatyam</div>
+          <div class="gallery-item-cat">Dance</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="classroom" tabindex="0" role="button" aria-label="Studio practice session — Classroom">
+        <img src="images/learn_through_practice.png" alt="Western dance studio practice" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Studio Practice</div>
+          <div class="gallery-item-cat">Classroom</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="rehearsals" tabindex="0" role="button" aria-label="Group rehearsal — Rehearsals">
+        <img src="images/rehearsal_experience.png" alt="Group rehearsal session" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Group Rehearsal</div>
+          <div class="gallery-item-cat">Rehearsals</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="drama" tabindex="0" role="button" aria-label="Drama performance — Drama">
+        <img src="images/drama-1.png" alt="Children drama theatre performance" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Theatre Production</div>
+          <div class="gallery-item-cat">Drama</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="vocals" tabindex="0" role="button" aria-label="Vocal performance — Vocals">
+        <img src="images/vocals.png" alt="Child vocal performance" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Vocal Showcase</div>
+          <div class="gallery-item-cat">Vocals</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="backstage" tabindex="0" role="button" aria-label="Backstage preparation — Backstage">
+        <img src="images/behind_sreen_preparation.png" alt="Backstage costume preparation" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Backstage Prep</div>
+          <div class="gallery-item-cat">Backstage</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="recitals" tabindex="0" role="button" aria-label="Recital stage lights — Recitals">
+        <img src="images/gallery-1.png" alt="Recital stage with theatrical lighting" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Winter Recital 2024</div>
+          <div class="gallery-item-cat">Recitals</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item span-2" data-category="rehearsals" tabindex="0" role="button" aria-label="Full cast rehearsal — Rehearsals">
+        <img src="images/performance.png" alt="Full cast ensemble rehearsal" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Full Cast Rehearsal</div>
+          <div class="gallery-item-cat">Rehearsals</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item headshot-focus" data-category="classroom" tabindex="0" role="button" aria-label="Instructor teaching — Classroom">
+        <img src="images/teacher-1.png" alt="Instructor with students in studio" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">One-on-One Coaching</div>
+          <div class="gallery-item-cat">Classroom</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="dance" tabindex="0" role="button" aria-label="Hip-hop performance — Dance">
+        <img src="images/hiphop-1.png" alt="Hip-hop dance performance" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Hip-Hop Showcase</div>
+          <div class="gallery-item-cat">Dance</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+      <div class="gallery-item" data-category="backstage" tabindex="0" role="button" aria-label="Pre-show warm up — Backstage">
+        <img src="images/growing_together.png" alt="Pre-show warm up backstage" loading="lazy" />
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-label">Pre-Show Warm Up</div>
+          <div class="gallery-item-cat">Backstage</div>
+        </div>
+        <div class="gallery-item-zoom"><i class="bi bi-zoom-in"></i></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox">
+  <div class="lightbox-content">
+    <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox"><i class="bi bi-x-lg"></i></button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo"><i class="bi bi-chevron-left"></i></button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo"><i class="bi bi-chevron-right"></i></button>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"><img src="images/gallery-cta.png" alt="Stage lights" /></div>
+  <div class="container">
+    <div class="cta-content reveal">
+      <p class="cta-label">Your Child Belongs on This Stage</p>
+      <h2 class="cta-title">Let Their Confidence Take Center Stage</h2>
+      <p class="cta-desc">Every photo in this gallery began with a first class. September 2026 enrollment is now open — give your child their moment.</p>
+      <div class="cta-actions">
+        <a href="dashboard.html" class="btn-primary btn-xl"><i class="bi bi-person-plus-fill"></i> Enroll Now</a>
+        <a href="programs.html" class="btn-ghost btn-xl"><i class="bi bi-collection"></i> Explore Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="rb-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="footer-logo-wrap"><img src="images/logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-light" /><img src="images/dark_logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-dark" style="display:none;" /></div><div><div class="footer-brand-name">RhythmBloom Academy</div><div class="footer-brand-tagline">Move. Perform. Shine.</div></div></div><p class="footer-about">Kolkata's premier Kids Dance & Performing Arts Academy since 2014.</p><div class="footer-social"><a href="#" class="footer-social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" class="footer-social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" class="footer-social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" class="footer-social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a></div></div>
+      <div><h4 class="footer-col-title">Programs</h4><ul class="footer-links"><li><a href="programs.html#classical">Classical Dance</a></li><li><a href="programs.html#western">Western Dance</a></li><li><a href="programs.html#hiphop">Hip-Hop</a></li><li><a href="programs.html#drama">Drama</a></li><li><a href="programs.html#vocals">Vocals</a></li></ul></div>
+      <div><h4 class="footer-col-title">Quick Links</h4><ul class="footer-links"><li><a href="schedule.html">Schedule</a></li><li><a href="instructors.html">Instructors</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="dashboard.html">Parent Dashboard</a></li></ul></div>
+      <div><h4 class="footer-col-title">Contact</h4><div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>14A Park Street, Kolkata 700 016</span></div><div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>+91 98300 12345</span></div><div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>hello@rhythmbloom.in</span></div></div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="container"><div class="footer-bottom"><p class="footer-copy">&copy; 2026 RhythmBloom Academy. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div></div></div>
+</footer>
+<div class="toast-container" aria-live="polite"></div>
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>

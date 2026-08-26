@@ -1,0 +1,646 @@
+/* ════════════════════════════════════════════════════════════════
+   HOME 1 & HOME 2 HERO/BANNER RULES FOR IPAD PRO (1024px - 1366px)
+   - Reduced banner height
+   - Removed excess top space/padding above banner content
+   - Left-aligned banner buttons (NOT centered)
+   ════════════════════════════════════════════════════════════════ */
+@media (min-width: 901px) and (max-width: 1366px) {
+  /* Home 1 Banner */
+  .hero {
+    min-height: 480px !important;
+    height: auto !important;
+  }
+
+  .hero-content {
+    padding-block: 36px 40px !important;
+    padding-top: 28px !important;
+    max-width: 700px !important;
+    text-align: left !important;
+  }
+
+  .hero-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    margin-inline: 0 !important;
+    width: auto !important;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost,
+  .hero-actions .btn-secondary {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 180px !important;
+    justify-content: center !important;
+  }
+
+  .hero-stats {
+    justify-content: flex-start !important;
+    margin-top: 28px !important;
+  }
+
+  /* Home 2 Banner */
+  .h2-hero {
+    min-height: 480px !important;
+    height: auto !important;
+    align-items: stretch !important;
+    border-bottom: 4px solid var(--primary-subtle);
+    box-shadow: 0 14px 30px rgba(51, 28, 54, 0.08);
+  }
+
+  .h2-hero-content {
+    padding-block: 28px 36px !important;
+    padding-top: 24px !important;
+    text-align: left !important;
+  }
+
+  .h2-hero-content .hero-badge {
+    margin-bottom: 16px !important;
+  }
+
+  .h2-hero-float-card {
+    margin-top: 56px !important;
+  }
+
+  .h2-hero-visual {
+    height: 100% !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+    align-self: stretch !important;
+  }
+
+  .h2-hero-visual img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --container-px: 28px;
+    --section-py: 80px;
+    --navbar-height: 68px;
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .level-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .instructors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .studio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .stat-item:nth-child(2n) {
+    border-right: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .recital-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recital-img-pane {
+    min-height: 320px;
+  }
+
+  .recital-content-pane {
+    padding: 36px 28px;
+  }
+
+  .hero-stats {
+    gap: 28px;
+  }
+
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .attendance-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fee-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --container-px: 24px;
+  }
+
+  .hero {
+    min-height: 90vh;
+  }
+
+  .hero-content {
+    padding-block: 100px 64px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .hero-stats {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .hero-stat-value {
+    font-size: 1.5rem;
+  }
+
+  .rb-navbar .nav-inner {
+    padding-inline: var(--container-px);
+  }
+
+  .program-card-img {
+    height: 200px;
+  }
+
+  .instructor-img {
+    height: 260px;
+  }
+
+  .dashboard-main {
+    padding: 0 20px 24px;
+  }
+
+  .auth-form-pane {
+    padding: 40px 40px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox-prev {
+    left: -48px;
+  }
+
+  .lightbox-next {
+    right: -48px;
+  }
+
+  .recital-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recital-img-pane::after {
+    display: none;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .cta-section {
+    padding-block: 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  .level-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .schedule-filters {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .schedule-filters select {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   TABLET & IPAD MINI (577px - 1024px) CARD GRID ALIGNMENT RULES
+   - 4 or more cards: align 2-by-2 (2 columns)
+   - 3 cards: align 2 in row 1, and center the 3rd card in row 2
+   ════════════════════════════════════════════════════════════════ */
+@media (min-width: 577px) and (max-width: 1366px) {
+
+  .programs-grid,
+  .level-grid,
+  .values-grid,
+  .instructors-grid,
+  .testimonials-grid,
+  .gallery-grid,
+  .overview-grid,
+  .h2-art-grid,
+  .community-grid,
+  .story-highlights,
+  .philosophy-grid,
+  .batch-cards,
+  .attendance-summary,
+  .program-selector-grid,
+  .inquiry-types,
+  .studio-grid,
+  .studio-showcase-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  /* Dashboard Fees & Payments Page Grid on iPad Mini / Tablet: 1 column stack (one by one) */
+  .fees-tab-grid,
+  #tab-fees > div {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  /* When grid has 3 items: center the 3rd item in row 2 */
+  .programs-grid> :nth-child(3):last-child,
+  .level-grid> :nth-child(3):last-child,
+  .values-grid> :nth-child(3):last-child,
+  .instructors-grid> :nth-child(3):last-child,
+  .testimonials-grid> :nth-child(3):last-child,
+  /* When grid has 3 or 5 items: center the 3rd or 5th item in row 2/3 */
+  .programs-grid> :nth-child(3):last-child,
+  .level-grid> :nth-child(3):last-child,
+  .values-grid> :nth-child(3):last-child,
+  .instructors-grid> :nth-child(3):last-child,
+  .testimonials-grid> :nth-child(3):last-child,
+  .gallery-grid> :nth-child(3):last-child,
+  .overview-grid> :nth-child(3):last-child,
+  .h2-art-grid> :nth-child(3):last-child,
+  .community-grid> :nth-child(3):last-child,
+  .story-highlights> :nth-child(3):last-child,
+  .philosophy-grid> :nth-child(3):last-child,
+  .batch-cards> :nth-child(3):last-child,
+  .inquiry-types> :nth-child(3):last-child,
+  .program-selector-grid> :nth-child(3):last-child,
+  .program-selector-grid> :nth-child(5):last-child,
+  .studio-grid> :nth-child(3):last-child,
+  .studio-showcase-grid> :nth-child(3):last-child {
+    grid-column: 1 / span 2 !important;
+    max-width: calc((100% - 20px) / 2) !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    justify-self: center !important;
+  }
+
+  /* Any odd last child in 2-column tablet layout centers */
+  .programs-grid> :last-child:nth-child(odd),
+  .level-grid> :last-child:nth-child(odd),
+  .values-grid> :last-child:nth-child(odd),
+  .instructors-grid> :last-child:nth-child(odd),
+  .testimonials-grid> :last-child:nth-child(odd),
+  .h2-art-grid> :last-child:nth-child(odd),
+  .story-highlights> :last-child:nth-child(odd),
+  .philosophy-grid> :last-child:nth-child(odd),
+  .batch-cards> :last-child:nth-child(odd),
+  .studio-showcase-grid> :last-child:nth-child(odd),
+  .program-selector-grid> :last-child:nth-child(odd) {
+    grid-column: 1 / span 2 !important;
+    max-width: calc((100% - 20px) / 2) !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    justify-self: center !important;
+  }
+
+  /* Keep a centered final testimonial the same width as either column. */
+  .testimonials-grid> :last-child:nth-child(odd) {
+    max-width: calc((100% - 20px) / 2) !important;
+  }
+
+  .testimonials-grid .testimonial-text {
+    min-height: calc(1.75em * 5);
+  }
+
+  .studio-grid> :nth-child(3):last-child {
+    max-width: calc((100% - 20px) / 2) !important;
+  }
+
+  .batch-cards> :last-child:nth-child(odd) {
+    max-width: calc((100% - 20px) / 2) !important;
+  }
+
+  .batch-cards .batch-card {
+    height: 208px !important;
+    min-height: 208px;
+  }
+
+  /* Programs: heading -> image -> details on iPad/tablet. */
+  .prog-inner,
+  .prog-inner.reverse {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    direction: ltr !important;
+    gap: 24px !important;
+  }
+
+  .prog-content {
+    display: contents !important;
+  }
+
+  .prog-content> .section-label,
+  .prog-content> h2,
+  .prog-content> p:first-of-type {
+    order: 1 !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  .prog-img-wrap {
+    order: 2 !important;
+    width: 100% !important;
+    height: clamp(300px, 45vw, 380px) !important;
+    margin: 4px 0 8px !important;
+  }
+
+  .prog-img-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+  }
+
+  .prog-content> p:nth-of-type(n+2),
+  .prog-content> .prog-meta-pills,
+  .prog-content> .prog-highlights,
+  .prog-content> .prog-btns,
+  .prog-content> .batch-cards {
+    order: 3 !important;
+    width: 100% !important;
+  }
+
+  .studio-amenities-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .studio-amenities-grid> :nth-child(3):last-child {
+    grid-column: 1 / span 2;
+    width: 100%;
+    max-width: calc((100% - 20px) / 2);
+    margin-inline: auto;
+    justify-self: center;
+  }
+
+  .studio-amenity-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .studio-amenity-card>p {
+    min-height: calc(1.65em * 4);
+  }
+
+  /* Level Card Badges on iPad Mini / Tablet: 2 in row 1, 3rd centered in row 2 */
+  .level-tags {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  .level-tags .tag {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .level-tags .tag:nth-child(3):last-child,
+  .level-tags .tag:last-child:nth-child(odd) {
+    grid-column: 1 / span 2 !important;
+    max-width: 220px !important;
+    margin-inline: auto !important;
+    justify-self: center !important;
+  }
+
+  /* Why Performing Arts Matter section on iPad Mini / Tablet: Heading -> Image -> Benefits Grid below image */
+  .why-matter-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  .why-matter-content {
+    order: 1 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .why-matter-content .section-desc {
+    margin-inline: auto !important;
+  }
+
+  .why-matter-image {
+    order: 2 !important;
+    width: 100% !important;
+    max-width: 620px !important;
+    margin-inline: auto !important;
+  }
+
+  /* CTA & Hero Actions alignment on iPad Mini / Tablet: same horizontal line (side-by-side) */
+  .cta-actions,
+  .hero-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+    width: auto !important;
+  }
+
+  .cta-actions .btn-primary,
+  .cta-actions .btn-secondary,
+  .cta-actions .btn-ghost,
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary,
+  .hero-actions .btn-ghost {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 180px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 24px !important;
+    box-sizing: border-box !important;
+    line-height: 1 !important;
+  }
+
+  .why-benefits-grid {
+    order: 3 !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+
+  .footer-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 36px 32px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-px: 20px;
+    --section-py: 64px;
+  }
+
+  h1 {
+    font-size: clamp(1.875rem, 6vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+  }
+
+  .stats-row {
+    border-radius: var(--radius-lg);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    text-align: center;
+  }
+
+  .hero-stat {
+    width: 100%;
+    justify-self: center;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+  }
+
+  .journey-steps::before {
+    left: 28px;
+  }
+
+  .journey-step-num {
+    width: 56px;
+    height: 56px;
+    font-size: 1.1rem;
+  }
+
+  .journey-step-img {
+    height: 180px;
+  }
+
+  .recital-content-pane {
+    padding: 28px 20px;
+  }
+
+  .lightbox-prev {
+    left: 8px;
+  }
+
+  .lightbox-next {
+    right: 8px;
+  }
+
+  .lightbox-overlay {
+    padding: 16px;
+  }
+
+  .faq-question {
+    padding: 14px 16px;
+    font-size: var(--text-sm);
+  }
+
+  .faq-answer-inner {
+    padding: 12px 16px 16px;
+  }
+
+  .enrollment-step-tab {
+    font-size: 0.68rem;
+    padding: 10px 8px;
+  }
+
+  .auth-form-pane {
+    padding: 32px 24px;
+  }
+}

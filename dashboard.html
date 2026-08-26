@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parent Dashboard — RhythmBloom Academy</title>
+  <meta name="description"
+    content="Parent Portal for RhythmBloom Academy — manage child enrollment, track class attendance, pay fees, view recital schedules, and receive notifications." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/dark-theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/desktop.css" />
+  <link rel="stylesheet" href="css/tablet.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+</head>
+
+<body class="dashboard-page">
+
+  <div class="dashboard-layout">
+    <!-- ══ DASHBOARD SIDEBAR ══ -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Dashboard navigation">
+      <div class="sidebar-header">
+        <a href="index.html" class="rb-brand">
+          <div class="rb-logo-wrap">
+            <img src="images/logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-light" />
+            <img src="images/dark_logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-dark" style="display:none;" />
+          </div>
+          <div class="rb-brand-text">
+            <span class="rb-brand-name">RhythmBloom Academy</span>
+            <span class="rb-brand-tagline">Move. Perform. Shine.</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-nav-section">
+        <div class="sidebar-section-label">Main Menu</div>
+        <a href="#tab-overview" class="sidebar-nav-link active" data-tab="tab-overview">
+          <i class="bi bi-grid-1x2-fill"></i>
+          <span>Overview</span>
+        </a>
+        <a href="#tab-enrollment" class="sidebar-nav-link" data-tab="tab-enrollment">
+          <i class="bi bi-person-plus-fill"></i>
+          <span>Enroll Child</span>
+        </a>
+        <a href="#tab-attendance" class="sidebar-nav-link" data-tab="tab-attendance">
+          <i class="bi bi-calendar-check-fill"></i>
+          <span>Attendance</span>
+        </a>
+        <a href="#tab-fees" class="sidebar-nav-link" data-tab="tab-fees">
+          <i class="bi bi-credit-card-fill"></i>
+          <span>Fees & Payments</span>
+        </a>
+        <a href="#tab-recitals" class="sidebar-nav-link" data-tab="tab-recitals">
+          <i class="bi bi-stars"></i>
+          <span>Recitals & Stage</span>
+        </a>
+      </div>
+      <div class="sidebar-logout-wrap">
+        <button type="button" id="logout-btn" class="sidebar-nav-link sidebar-logout-btn">
+          <i class="bi bi-box-arrow-right"></i><span>Log Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ══ DASHBOARD MAIN CONTENT ══ -->
+    <div class="dashboard-main">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="dashboard-topbar-nav">
+          <div class="d-flex align-items-center gap-2 dashboard-mobile-nav-group">
+            <a href="index.html" class="rb-brand dashboard-mobile-brand">
+              <div class="rb-logo-wrap">
+                <img src="images/logo.png" alt="RhythmBloom Logo" class="rb-logo-light" />
+                <img src="images/dark_logo.png" alt="RhythmBloom Logo" class="rb-logo-dark" style="display:none;" />
+              </div>
+              <div class="rb-brand-text">
+                <span class="rb-brand-name">RhythmBloom</span>
+                <span class="rb-brand-tagline">Move. Perform. Shine.</span>
+              </div>
+            </a>
+            <div class="dashboard-mobile-utility-controls" aria-label="Display controls">
+              <button class="rb-icon-btn" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+                <i class="bi bi-sun theme-icon-light"></i>
+                <i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i>
+              </button>
+              <button class="rb-icon-btn" data-dir-toggle title="Switch to RTL" aria-label="Switch RTL">
+                <span class="dir-label" style="font-size:0.7rem;font-weight:700">RTL</span>
+              </button>
+            </div>
+            <button class="rb-icon-btn dashboard-mobile-toggle" aria-label="Toggle Navigation">
+              <i class="bi bi-list" style="font-size: 20px;"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="dashboard-topbar-actions">
+          <div class="child-switcher-wrap">
+            <div class="dashboard-child-selector" role="button" aria-expanded="false" aria-label="Select child"
+              tabindex="0">
+              <div class="child-avatar">K</div>
+              <div class="child-info">
+                <div class="child-name">Kavya Agarwal</div>
+                <div class="child-program">Bharatanatyam · Beginner</div>
+              </div>
+              <i class="bi bi-chevron-down child-selector-arrow"></i>
+            </div>
+            <div class="child-dropdown">
+              <div class="child-option" data-name="Kavya Agarwal" data-program="Bharatanatyam · Beginner"
+                data-initial="K">
+                <div class="child-avatar">K</div>
+                <div>
+                  <div class="child-name">Kavya Agarwal</div>
+                  <div class="child-program">Bharatanatyam · Beginner</div>
+                </div>
+              </div>
+              <div class="child-option" data-name="Aarav Agarwal" data-program="Hip-Hop · Intermediate"
+                data-initial="A">
+                <div class="child-avatar" style="background:#7A4E7F;">A</div>
+                <div>
+                  <div class="child-name">Aarav Agarwal</div>
+                  <div class="child-program">Hip-Hop · Intermediate</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="profile-menu-wrap">
+            <button class="dashboard-profile-btn" type="button" aria-label="Open profile menu" aria-expanded="false">
+              <span class="profile-initial">S</span><span class="profile-btn-name">Sunita</span><i
+                class="bi bi-chevron-down"></i>
+            </button>
+            <div class="dashboard-profile-menu">
+              <a href="#tab-notifications" data-quick-action="notifications"><i
+                  class="bi bi-bell"></i><span>Notifications</span><span class="sidebar-badge">2</span></a>
+              <a href="index.html"><i class="bi bi-house"></i><span>Academy Website</span></a>
+            </div>
+          </div>
+          <button class="rb-icon-btn dashboard-theme-toggle" data-theme-toggle title="Toggle Dark Mode"
+            aria-label="Toggle Dark Mode">
+            <i class="bi bi-sun theme-icon-light"></i>
+            <i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i>
+          </button>
+          <button class="rb-icon-btn dashboard-dir-toggle" data-dir-toggle title="Switch to RTL"
+            aria-label="Switch RTL">
+            <span class="dir-label" style="font-size:0.7rem;font-weight:700">RTL</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- ── TAB 1: OVERVIEW ── -->
+      <div class="dashboard-tab-panel active" id="tab-overview">
+        <section class="dashboard-welcome-panel" aria-labelledby="dashboard-welcome-title" style="margin-bottom: 24px;">
+          <div>
+            <h1 class="dashboard-welcome-title" id="dashboard-welcome-title">Welcome back, Sunita!</h1>
+            <div class="dashboard-welcome-sub">Parent Portal · Academic Year 2026–2027</div>
+          </div>
+        </section>
+
+        <div class="overview-grid">
+          <div class="overview-card">
+            <div class="overview-card-icon"><i class="bi bi-person-heart"></i></div>
+            <div class="overview-card-body">
+              <span class="overview-card-title">Enrolled Child</span>
+              <div class="overview-card-value">Kavya Agarwal</div>
+              <div class="overview-card-sub">Bharatanatyam · Beginner</div>
+            </div>
+          </div>
+          <div class="overview-card">
+            <div class="overview-card-icon"><i class="bi bi-calendar-check"></i></div>
+            <div class="overview-card-body">
+              <span class="overview-card-title">Term Attendance</span>
+              <div class="overview-card-value">92%</div>
+              <div class="overview-card-sub">11 of 12 classes attended</div>
+            </div>
+          </div>
+          <div class="overview-card">
+            <div class="overview-card-icon"><i class="bi bi-clock-history"></i></div>
+            <div class="overview-card-body">
+              <span class="overview-card-title">Next Class</span>
+              <div class="overview-card-value">Saturday, 10 AM</div>
+              <div class="overview-card-sub">Studio 1 · Guru Priya Sharma</div>
+            </div>
+          </div>
+          <div class="overview-card">
+            <div class="overview-card-icon"><i class="bi bi-wallet2"></i></div>
+            <div class="overview-card-body">
+              <span class="overview-card-title">Fee Status</span>
+              <div class="overview-card-value" style="color:var(--success);">Paid</div>
+              <div class="overview-card-sub">September Term (₹3,200)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Widget Grid -->
+        <div class="dashboard-overview-widgets"
+          style="display:grid; grid-template-columns: 1.8fr 1fr; gap: 24px; margin-top: 24px;">
+          <!-- Left: Quick Actions + Next Recital -->
+          <div class="dashboard-overview-primary">
+            <!-- Quick Action Buttons -->
+            <div
+              style="background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:24px; margin-bottom:24px;">
+              <h3 style="font-family:var(--font-heading); font-size:1.125rem; font-weight:600; margin-bottom:16px;">
+                Quick Actions</h3>
+              <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                <button class="btn-secondary" data-quick-action="enroll"
+                  style="flex-direction:column; gap:8px; padding:16px 8px; text-align:center;">
+                  <i class="bi bi-person-plus-fill" style="font-size:20px; color:var(--primary);"></i>
+                  <span style="font-size:var(--text-xs); font-weight:600;">Enroll Child</span>
+                </button>
+                <button class="btn-secondary" data-quick-action="attendance"
+                  style="flex-direction:column; gap:8px; padding:16px 8px; text-align:center;">
+                  <i class="bi bi-calendar-week" style="font-size:20px; color:var(--primary);"></i>
+                  <span style="font-size:var(--text-xs); font-weight:600;">View Calendar</span>
+                </button>
+                <button class="btn-secondary" data-quick-action="fees"
+                  style="flex-direction:column; gap:8px; padding:16px 8px; text-align:center;">
+                  <i class="bi bi-receipt" style="font-size:20px; color:var(--primary);"></i>
+                  <span style="font-size:var(--text-xs); font-weight:600;">Pay / Receipt</span>
+                </button>
+                <button class="btn-secondary" data-quick-action="recitals"
+                  style="flex-direction:column; gap:8px; padding:16px 8px; text-align:center;">
+                  <i class="bi bi-ticket-perforated-fill" style="font-size:20px; color:var(--primary);"></i>
+                  <span style="font-size:var(--text-xs); font-weight:600;">Recital Tickets</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Recital Banner Widget -->
+            <div class="recital-event">
+              <div>
+                <span class="badge badge-warning" style="margin-bottom:10px;">Upcoming Recital</span>
+                <h3
+                  style="font-family:var(--font-heading); font-size:1.375rem; font-weight:600; color:white; margin-bottom:8px;">
+                  Annual Showcase 2026: Colours of Movement</h3>
+                <p style="color:rgba(255,255,255,0.85); font-size:var(--text-sm); line-height:1.6; margin-bottom:16px;">
+                  Kavya is performing in Act I: Bharatanatyam Ensemble. Rehearsals begin October 15th.</p>
+                <div style="display:flex; gap:16px; font-size:var(--text-xs); color:rgba(255,255,255,0.8);">
+                  <span><i class="bi bi-calendar-event"></i> Dec 14 & 15, 2026</span>
+                  <span><i class="bi bi-geo-alt"></i> Rabindra Sadan, Kolkata</span>
+                </div>
+              </div>
+              <button class="btn-ghost" data-quick-action="recitals"
+                style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:white; align-self:center;">View
+                Details</button>
+            </div>
+          </div>
+
+          <!-- Right: Recent Notifications -->
+          <div class="dashboard-recent-updates"
+            style="background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:24px; display:flex; flex-direction:column;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
+              <h3 style="font-family:var(--font-heading); font-size:1.125rem; font-weight:600;">Recent Updates</h3>
+              <a href="#tab-notifications" data-quick-action="notifications"
+                style="font-size:var(--text-xs); font-weight:600; color:var(--primary);">View All</a>
+            </div>
+
+            <div class="notif-list">
+              <div class="notif-item unread">
+                <div class="notif-icon"><i class="bi bi-stars"></i></div>
+                <div class="notif-content">
+                  <div class="notif-title">Recital Costume Measurement</div>
+                  <div class="notif-msg">Measurement forms due by Sept 30.</div>
+                  <div class="notif-time">2 hours ago</div>
+                </div>
+              </div>
+              <div class="notif-item unread">
+                <div class="notif-icon"><i class="bi bi-check-circle-fill" style="color:var(--success);"></i></div>
+                <div class="notif-content">
+                  <div class="notif-title">Term Fee Received</div>
+                  <div class="notif-msg">Receipt #RB-2026-0894 generated.</div>
+                  <div class="notif-time">Yesterday</div>
+                </div>
+              </div>
+              <div class="notif-item">
+                <div class="notif-icon"><i class="bi bi-calendar3"></i></div>
+                <div class="notif-content">
+                  <div class="notif-title">Special Workshop Announced</div>
+                  <div class="notif-msg">Abhinaya masterclass on Sept 20.</div>
+                  <div class="notif-time">3 days ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB 2: ENROLLMENT WIZARD ── -->
+      <div class="dashboard-tab-panel" id="tab-enrollment">
+        <div
+          style="background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:32px;">
+          <h2 style="font-family:var(--font-heading); font-size:1.5rem; font-weight:600; margin-bottom:6px;">New Term
+            Enrollment Wizard</h2>
+          <p style="color:var(--text-muted); font-size:var(--text-sm); margin-bottom:28px;">Follow the steps below to
+            enroll your child for the September 2026 Term.</p>
+
+          <!-- Stepper Navigation Header -->
+          <div class="enrollment-steps-header" aria-label="Enrollment progress">
+            <button type="button" class="enrollment-progress-nav enrollment-progress-prev" data-enroll-progress-prev aria-label="Previous enrollment step">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <div class="enrollment-step-tab active" data-step-tab="1">
+              <div class="enrollment-step-num">1</div>
+              <span class="enrollment-step-name">Child</span>
+            </div>
+            <div class="enrollment-step-tab" data-step-tab="2">
+              <div class="enrollment-step-num">2</div>
+              <span class="enrollment-step-name">Program</span>
+            </div>
+            <div class="enrollment-step-tab" data-step-tab="3">
+              <div class="enrollment-step-num">3</div>
+              <span class="enrollment-step-name">Batch</span>
+            </div>
+            <div class="enrollment-step-tab" data-step-tab="4">
+              <div class="enrollment-step-num">4</div>
+              <span class="enrollment-step-name">Consent</span>
+            </div>
+            <div class="enrollment-step-tab" data-step-tab="5">
+              <div class="enrollment-step-num">5</div>
+              <span class="enrollment-step-name">Confirm</span>
+            </div>
+            <button type="button" class="enrollment-progress-nav enrollment-progress-next" data-enroll-progress-next aria-label="Next enrollment step">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Step 1 Content -->
+          <div class="enrollment-step-content active" data-step="1">
+            <h3 style="font-size:1.2rem; font-weight:600; margin-bottom:16px;">Step 1: Child Information</h3>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div>
+                <label class="form-label">Full Name of Child</label>
+                <input type="text" class="form-control" value="Kavya Agarwal" />
+              </div>
+              <div>
+                <label class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" value="2018-05-14" />
+              </div>
+              <div>
+                <label class="form-label">Gender</label>
+                <select class="form-control">
+                  <option selected>Female</option>
+                  <option>Male</option>
+                  <option>Non-binary / Other</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label">School Name</label>
+                <input type="text" class="form-control" value="La Martiniere for Girls, Kolkata" />
+              </div>
+            </div>
+            <div class="d-flex justify-content-end gap-3 mt-4 wizard-actions-row" style="display:flex; align-items:center; justify-content:flex-end; gap:18px; margin-top:32px;">
+              <button class="btn-primary" data-enroll-next>Next: Select Program &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Step 2 Content -->
+          <div class="enrollment-step-content" data-step="2">
+            <h3 style="font-size:1.2rem; font-weight:600; margin-bottom:16px;">Step 2: Select Performing Arts Discipline
+            </h3>
+            <div class="program-selector-grid">
+              <div class="program-selector-item selected">
+                <div class="program-selector-icon"><i class="bi bi-flower2"></i></div>
+                <div class="program-selector-name">Classical Dance</div>
+                <div style="font-size:var(--text-xs); color:var(--text-muted); margin-top:4px;">Bharatanatyam</div>
+              </div>
+              <div class="program-selector-item">
+                <div class="program-selector-icon"><i class="bi bi-person-arms-up"></i></div>
+                <div class="program-selector-name">Western Dance</div>
+                <div style="font-size:var(--text-xs); color:var(--text-muted); margin-top:4px;">Contemporary & Jazz
+                </div>
+              </div>
+              <div class="program-selector-item">
+                <div class="program-selector-icon"><i class="bi bi-soundwave"></i></div>
+                <div class="program-selector-name">Hip-Hop</div>
+                <div style="font-size:var(--text-xs); color:var(--text-muted); margin-top:4px;">Breaking & Freestyle
+                </div>
+              </div>
+              <div class="program-selector-item">
+                <div class="program-selector-icon"><i class="bi bi-masks-theater"></i></div>
+                <div class="program-selector-name">Drama</div>
+                <div style="font-size:var(--text-xs); color:var(--text-muted); margin-top:4px;">Acting & Storytelling
+                </div>
+              </div>
+              <div class="program-selector-item">
+                <div class="program-selector-icon"><i class="bi bi-mic"></i></div>
+                <div class="program-selector-name">Vocals</div>
+                <div style="font-size:var(--text-xs); color:var(--text-muted); margin-top:4px;">Voice & Performance
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between gap-3 mt-4 wizard-actions-row" style="display:flex; align-items:center; justify-content:space-between; gap:18px; margin-top:32px;">
+              <button class="btn-secondary" data-enroll-prev style="margin-right:16px;">&larr; Back</button>
+              <button class="btn-primary" data-enroll-next>Next: Choose Batch &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Step 3 Content -->
+          <div class="enrollment-step-content" data-step="3">
+            <h3 style="font-size:1.2rem; font-weight:600; margin-bottom:16px;">Step 3: Select Level & Batch Schedule
+            </h3>
+            <div class="enrollment-level-options" style="display:flex; gap:12px; margin-bottom:20px;">
+              <button class="btn-primary btn-sm selected" data-level-select>Beginner (Ages 5–8)</button>
+              <button class="btn-secondary btn-sm" data-level-select>Intermediate (Ages 8–12)</button>
+              <button class="btn-secondary btn-sm" data-level-select>Advanced (Ages 12+)</button>
+            </div>
+            <div class="enrollment-batch-options" style="display:flex; flex-direction:column; gap:12px;">
+              <div class="batch-item selected">
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary);">Saturday Batch A (Recommended)</div>
+                  <div style="font-size:var(--text-xs); color:var(--text-muted);">Sat 10:00 AM – 11:00 AM · Studio 1 ·
+                    Instructor: Priya Sharma</div>
+                </div>
+                <span class="badge badge-success">8 Seats Left</span>
+              </div>
+              <div class="batch-item">
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary);">Sunday Batch B</div>
+                  <div style="font-size:var(--text-xs); color:var(--text-muted);">Sun 10:00 AM – 11:00 AM · Studio 1 ·
+                    Instructor: Priya Sharma</div>
+                </div>
+                <span class="badge badge-success">6 Seats Left</span>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between gap-3 mt-4 wizard-actions-row" style="display:flex; align-items:center; justify-content:space-between; gap:18px; margin-top:32px;">
+              <button class="btn-secondary" data-enroll-prev style="margin-right:16px;">&larr; Back</button>
+              <button class="btn-primary" data-enroll-next>Next: Medical & Consent &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Step 4 Content -->
+          <div class="enrollment-step-content" data-step="4">
+            <h3 style="font-size:1.2rem; font-weight:600; margin-bottom:16px;">Step 4: Emergency Contacts & Health
+              Declaration</h3>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+              <div>
+                <label class="form-label">Emergency Contact Name</label>
+                <input type="text" class="form-control" value="Rohit Agarwal (Father)" />
+              </div>
+              <div>
+                <label class="form-label">Emergency Phone Number</label>
+                <input type="tel" class="form-control" value="+91 98300 98765" />
+              </div>
+            </div>
+            <div>
+              <label class="form-label">Medical Conditions / Allergies / Notes</label>
+              <textarea class="form-control" style="min-height:80px;"
+                placeholder="List any medical conditions, asthma, allergies or special instructions..."></textarea>
+            </div>
+            <div style="margin-top:20px; display:flex; flex-direction:column; gap:10px;">
+              <label style="display:flex; align-items:center; gap:10px; font-size:var(--text-sm); cursor:pointer;">
+                <input type="checkbox" checked style="accent-color:var(--primary);" />
+                I hereby agree to the academy Code of Conduct and Studio Safety Guidelines.
+              </label>
+              <label style="display:flex; align-items:center; gap:10px; font-size:var(--text-sm); cursor:pointer;">
+                <input type="checkbox" checked style="accent-color:var(--primary);" />
+                I give permission for recital photography/videography for official academy publications.
+              </label>
+            </div>
+            <div class="d-flex justify-content-between gap-3 mt-4 wizard-actions-row" style="display:flex; align-items:center; justify-content:space-between; gap:18px; margin-top:32px;">
+              <button class="btn-secondary" data-enroll-prev style="margin-right:16px;">&larr; Back</button>
+              <button class="btn-primary" id="confirm-enroll-btn">Complete & Enroll &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Step 5 Content (Confirmation) -->
+          <div class="enrollment-step-content text-center" data-step="5" style="padding:48px 24px;">
+            <div
+              style="width:72px; height:72px; background:var(--primary-subtle); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:36px; margin:0 auto 20px;">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
+            <h3 style="font-family:var(--font-heading); font-size:1.75rem; font-weight:600; margin-bottom:12px;">
+              Enrollment Confirmed!</h3>
+            <p style="color:var(--text-secondary); max-width:480px; margin:0 auto 28px; line-height:1.7;">
+              Kavya Agarwal is officially enrolled in <strong>Bharatanatyam Beginner (Saturday 10 AM)</strong> for the
+              September 2026 Term. A confirmation email and welcome pack have been sent to your registered email.
+            </p>
+            <div class="d-flex justify-content-center gap-3 wizard-actions-row" style="display:flex; align-items:center; justify-content:center; gap:18px; margin-top:32px;">
+              <a href="#tab-overview" class="btn-primary" data-quick-action="overview" style="margin-right:16px;">Go to Overview</a>
+              <a href="#tab-fees" class="btn-secondary" data-quick-action="fees">View Fee Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB 3: ATTENDANCE CALENDAR ── -->
+      <div class="dashboard-tab-panel" id="tab-attendance">
+        <div class="attendance-summary mb-4">
+          <div class="att-stat-card">
+            <div class="att-stat-value">92%</div>
+            <div class="att-stat-label">Term Attendance Rate</div>
+          </div>
+          <div class="att-stat-card">
+            <div class="att-stat-value" style="color:var(--success);">11</div>
+            <div class="att-stat-label">Classes Attended</div>
+          </div>
+          <div class="att-stat-card">
+            <div class="att-stat-value" style="color:var(--error);">1</div>
+            <div class="att-stat-label">Classes Missed</div>
+          </div>
+          <div class="att-stat-card">
+            <div class="att-stat-value" style="color:var(--primary);">16</div>
+            <div class="att-stat-label">Total Scheduled</div>
+          </div>
+        </div>
+
+        <div class="att-calendar-wrap">
+          <div class="att-calendar-header">
+            <h3 id="cal-title"
+              style="font-family:var(--font-heading); font-size:1.25rem; font-weight:600; color:var(--text-primary);">
+              August 2026</h3>
+            <div class="att-legend">
+              <div class="att-legend-item">
+                <div class="att-legend-dot present"></div><span>Present</span>
+              </div>
+              <div class="att-legend-item">
+                <div class="att-legend-dot absent"></div><span>Absent</span>
+              </div>
+              <div class="att-legend-item">
+                <div class="att-legend-dot upcoming"></div><span>Upcoming</span>
+              </div>
+            </div>
+            <div class="att-calendar-nav d-flex gap-2">
+              <button class="rb-icon-btn" id="cal-prev" aria-label="Previous Month"><i
+                  class="bi bi-chevron-left"></i></button>
+              <button class="rb-icon-btn" id="cal-next" aria-label="Next Month"><i
+                  class="bi bi-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <div class="att-calendar-grid" id="cal-grid">
+            <!-- Calendar cells rendered by js/dashboard.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB 4: FEES & PAYMENTS ── -->
+      <div class="dashboard-tab-panel" id="tab-fees">
+        <div class="fees-tab-grid">
+          <!-- Left: Fee Status Card -->
+          <div class="fee-card">
+            <span class="badge badge-success" id="fee-status" style="width:fit-content; margin-bottom:12px;">Paid</span>
+            <div class="fee-card-label">Current Term Outstanding</div>
+            <div class="fee-card-amount" id="outstanding-amount">₹0</div>
+            <div style="font-size:var(--text-xs); color:rgba(255,255,255,0.7); margin-bottom:24px;">September Term
+              (Bharatanatyam Beginner)</div>
+
+            <div
+              style="display:flex; flex-direction:column; gap:8px; border-top:1px solid rgba(255,255,255,0.2); padding-top:16px;">
+              <div style="display:flex; justify-content:space-between; font-size:var(--text-xs);">
+                <span>Monthly Tuition Fee:</span>
+                <strong style="color:white;">₹3,200</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:var(--text-xs);">
+                <span>Registration Fee:</span>
+                <strong style="color:white;">₹0 (Waived)</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; font-size:var(--text-xs);">
+                <span>Next Invoice Due:</span>
+                <strong style="color:white;">October 1, 2026</strong>
+              </div>
+            </div>
+
+            <button class="btn-ghost" id="pay-btn"
+              style="margin-top:24px; background:rgba(255,255,255,0.15); color:white; border-color:rgba(255,255,255,0.3); width:100%; justify-content:center;">
+              <i class="bi bi-credit-card"></i> Pay Outstanding / Advance
+            </button>
+          </div>
+
+          <!-- Right: Invoice History Table -->
+          <div
+            style="background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:24px;">
+            <h3 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:600; margin-bottom:16px;">Payment
+              History & Invoices</h3>
+            <div style="overflow-x:auto;">
+              <table class="table" style="width:100%; font-size:var(--text-sm);">
+                <thead>
+                  <tr style="border-bottom:1px solid var(--divider); color:var(--text-muted); text-align:left;">
+                    <th style="padding:12px;">Invoice ID</th>
+                    <th style="padding:12px;">Description</th>
+                    <th style="padding:12px;">Date</th>
+                    <th style="padding:12px;">Amount</th>
+                    <th style="padding:12px;">Status</th>
+                    <th style="padding:12px; text-align:right;">Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--divider);">
+                    <td style="padding:12px; font-weight:700;">#RB-2026-0894</td>
+                    <td style="padding:12px;">September Term Tuition Fee</td>
+                    <td style="padding:12px;">24 Aug 2026</td>
+                    <td style="padding:12px;">₹3,200</td>
+                    <td style="padding:12px;"><span class="badge badge-success">Paid</span></td>
+                    <td style="padding:12px; text-align:right;">
+                      <button class="btn-secondary btn-sm" id="view-receipt-btn"><i class="bi bi-download"></i>
+                        Receipt</button>
+                    </td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--divider);">
+                    <td style="padding:12px; font-weight:700;">#RB-2026-0712</td>
+                    <td style="padding:12px;">August Term Tuition Fee</td>
+                    <td style="padding:12px;">01 Aug 2026</td>
+                    <td style="padding:12px;">₹3,200</td>
+                    <td style="padding:12px;"><span class="badge badge-success">Paid</span></td>
+                    <td style="padding:12px; text-align:right;">
+                      <button class="btn-secondary btn-sm"><i class="bi bi-download"></i> Receipt</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB 5: RECITALS & STAGE ── -->
+      <div class="dashboard-tab-panel" id="tab-recitals">
+        <div class="recital-event mb-4">
+          <div>
+            <span class="badge badge-warning" style="margin-bottom:10px;">Upcoming Recital</span>
+            <h2
+              style="font-family:var(--font-heading); font-size:1.75rem; font-weight:600; color:white; margin-bottom:8px;">
+              Colours of Movement — Annual Showcase 2026</h2>
+            <p style="color:rgba(255,255,255,0.85); line-height:1.7; margin-bottom:16px;">Kavya is participating in Act
+              I: Classical Ensemble. Rehearsals kick off mid-October at Studio 1.</p>
+            <div class="recital-event-details">
+              <div><i class="bi bi-calendar-event"></i> <strong>Date:</strong> Dec 14 & 15, 2026</div>
+              <div><i class="bi bi-geo-alt"></i> <strong>Venue:</strong> Rabindra Sadan, Kolkata</div>
+              <div><i class="bi bi-clock"></i> <strong>Show Time:</strong> 5:30 PM (Call time: 3:00 PM)</div>
+              <div><i class="bi bi-scissors"></i> <strong>Costume Status:</strong> Measurement Pending</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recital Timeline / Tasks -->
+        <div
+          style="background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:28px;">
+          <h3 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:600; margin-bottom:20px;">Recital
+            Preparation Timeline</h3>
+          <div class="recital-timeline">
+            <div class="recital-timeline-step done">
+              <div style="font-weight:700; color:var(--text-primary);">Role & Group Allocation</div>
+              <div style="font-size:var(--text-xs); color:var(--text-muted);">Allocated to Act I: Bharatanatyam Ensemble
+              </div>
+            </div>
+            <div class="recital-timeline-step active">
+              <div style="font-weight:700; color:var(--text-primary);">Costume Measurement Submission</div>
+              <div style="font-size:var(--text-xs); color:var(--primary);">Due by September 30, 2026</div>
+            </div>
+            <div class="recital-timeline-step">
+              <div style="font-weight:700; color:var(--text-primary);">Stage Rehearsals Begin</div>
+              <div style="font-size:var(--text-xs); color:var(--text-muted);">Starts October 15, 2026</div>
+            </div>
+            <div class="recital-timeline-step">
+              <div style="font-weight:700; color:var(--text-primary);">Ticket Counter Opens</div>
+              <div style="font-size:var(--text-xs); color:var(--text-muted);">November 1, 2026</div>
+            </div>
+            <div class="recital-timeline-step">
+              <div style="font-weight:700; color:var(--text-primary);">Grand Recital Night</div>
+              <div style="font-size:var(--text-xs); color:var(--text-muted);">December 14 & 15, 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB 6: NOTIFICATIONS ── -->
+      <div class="dashboard-tab-panel" id="tab-notifications">
+        <div
+          style="background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:28px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+            <h2 style="font-family:var(--font-heading); font-size:1.375rem; font-weight:600;">Notifications &
+              Announcements</h2>
+            <button class="btn-secondary btn-sm" id="mark-all-read">Mark All as Read</button>
+          </div>
+
+          <div class="notif-list">
+            <div class="notif-item unread">
+              <div class="notif-icon"><i class="bi bi-stars"></i></div>
+              <div class="notif-content">
+                <div class="notif-title">Recital Costume Measurement Form Open</div>
+                <div class="notif-msg">Please submit Kavya's costume measurements before September 30 for the Annual
+                  Showcase.</div>
+                <div class="notif-time">Today at 10:30 AM</div>
+              </div>
+            </div>
+            <div class="notif-item unread">
+              <div class="notif-icon"><i class="bi bi-check-circle-fill" style="color:var(--success);"></i></div>
+              <div class="notif-content">
+                <div class="notif-title">Payment Confirmation: September Term</div>
+                <div class="notif-msg">Your payment of ₹3,200 for September 2026 tuition has been received. Thank you!
+                </div>
+                <div class="notif-time">Yesterday at 4:15 PM</div>
+              </div>
+            </div>
+            <div class="notif-item">
+              <div class="notif-icon"><i class="bi bi-calendar-event"></i></div>
+              <div class="notif-content">
+                <div class="notif-title">Studio Closed for Janmashtami</div>
+                <div class="notif-msg">Please note that all classes will remain suspended on September 4th for
+                  Janmashtami.</div>
+                <div class="notif-time">August 20, 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PAYMENT MODAL ══ -->
+  <div class="modal-overlay" id="pay-modal" role="dialog" aria-modal="true" aria-label="Payment Modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:600;">Pay Academy Fees</h3>
+        <button class="rb-icon-btn" id="pay-modal-close" aria-label="Close Modal"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body">
+        <div style="background:var(--bg-secondary); padding:16px; border-radius:var(--radius-md); margin-bottom:20px;">
+          <div style="font-size:var(--text-xs); color:var(--text-muted);">Selected Payment</div>
+          <div style="font-size:var(--text-md); font-weight:700; color:var(--text-primary);">September 2026 Term Tuition
+          </div>
+          <div style="font-size:1.5rem; font-weight:600; color:var(--primary); margin-top:4px;">₹3,200</div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div>
+            <label class="form-label">Payment Method</label>
+            <select class="form-control">
+              <option>UPI / GPay / PhonePe / Paytm</option>
+              <option>Credit / Debit Card</option>
+              <option>Net Banking</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">UPI ID / VPA</label>
+            <input type="text" class="form-control" value="sunita@upi" />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" id="pay-cancel">Cancel</button>
+        <button class="btn-primary" id="pay-confirm">Confirm Payment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RECEIPT MODAL ══ -->
+  <div class="modal-overlay" id="receipt-modal" role="dialog" aria-modal="true" aria-label="Receipt Modal">
+    <div class="modal-card" style="max-width:520px;">
+      <div class="modal-header">
+        <h3 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:600;">Official Payment Receipt</h3>
+        <button class="rb-icon-btn" id="receipt-close" aria-label="Close Modal"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div class="modal-body" style="background:white; color:#29252B; border-radius:var(--radius-md); padding:24px;">
+        <div
+          style="display:flex; justify-content:space-between; border-bottom:2px solid #633A68; padding-bottom:12px; margin-bottom:16px;">
+          <div>
+            <div style="font-weight:600; color:#633A68; font-size:1.1rem;">RhythmBloom Academy</div>
+            <div style="font-size:0.75rem; color:#756A76;">14A Park Street, Kolkata</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-weight:700; font-size:0.875rem;">Receipt #RB-2026-0894</div>
+            <div style="font-size:0.75rem; color:#756A76;">Date: 24 Aug 2026</div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:8px; font-size:0.875rem; margin-bottom:20px;">
+          <div><strong>Student Name:</strong> Kavya Agarwal</div>
+          <div><strong>Parent Name:</strong> Sunita Agarwal</div>
+          <div><strong>Program:</strong> Bharatanatyam (Beginner)</div>
+          <div><strong>Payment Method:</strong> UPI (Ref: 9830029384)</div>
+        </div>
+
+        <div
+          style="border-top:1px dashed #CCC; border-bottom:1px dashed #CCC; padding:12px 0; margin-bottom:16px; display:flex; justify-content:space-between; font-weight:700;">
+          <span>September 2026 Tuition Fee</span>
+          <span>₹3,200.00</span>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; font-weight:800; font-size:1.1rem; color:#633A68;">
+          <span>Total Paid</span>
+          <span>₹3,200.00</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-primary" id="download-receipt" style="width:100%; justify-content:center;">
+          <i class="bi bi-download"></i> Download PDF Receipt
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="logout-modal" id="logout-modal" role="dialog" aria-modal="true" aria-labelledby="logout-title"
+    aria-hidden="true">
+    <div class="logout-modal-card">
+      <div class="logout-modal-icon"><i class="bi bi-box-arrow-right"></i></div>
+      <h2 id="logout-title">Log out of your account?</h2>
+      <p>You’ll need to sign in again to access the Parent Portal.</p>
+      <div class="logout-modal-actions">
+        <button type="button" class="btn-secondary" id="logout-cancel">Cancel</button>
+        <button type="button" class="btn-primary" id="logout-confirm">Yes, Log Out</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RhythmBloom Academy — Move. Perform. Shine.</title>
+  <meta name="description" content="RhythmBloom Academy is a premier kids dance and performing arts school offering classical dance, western dance, hip-hop, drama, and vocals for children of all ages." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Manrope:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/dark-theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/desktop.css" />
+  <link rel="stylesheet" href="css/tablet.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav class="rb-navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="rb-brand" aria-label="RhythmBloom Academy Home">
+      <div class="rb-logo-wrap">
+        <img src="images/logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-light" />
+        <img src="images/dark_logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-dark" style="display:none;" />
+      </div>
+      <div class="rb-brand-text">
+        <span class="rb-brand-name">RhythmBloom Academy</span>
+        <span class="rb-brand-tagline">Move. Perform. Shine.</span>
+      </div>
+    </a>
+    <nav class="rb-nav">
+      <ul class="rb-nav-list">
+        <li class="rb-nav-item"><a href="index.html" class="rb-nav-link active">Home 1</a></li>
+        <li class="rb-nav-item"><a href="home-2.html" class="rb-nav-link">Home 2</a></li>
+        <li class="rb-nav-item"><a href="about.html" class="rb-nav-link">About</a></li>
+        <li class="rb-nav-item"><a href="programs.html" class="rb-nav-link">Programs</a></li>
+        <li class="rb-nav-item"><a href="instructors.html" class="rb-nav-link">Instructors</a></li>
+        <li class="rb-nav-item"><a href="schedule.html" class="rb-nav-link">Schedule</a></li>
+        <li class="rb-nav-item"><a href="gallery.html" class="rb-nav-link">Gallery</a></li>
+        <li class="rb-nav-item"><a href="contact.html" class="rb-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="rb-nav-right">
+      <button class="rb-icon-btn" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+        <i class="bi bi-sun theme-icon-light"></i>
+        <i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i>
+      </button>
+      <button class="rb-icon-btn" data-dir-toggle title="Switch to RTL" aria-label="Switch to RTL">
+        <span class="dir-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+      </button>
+      <a href="dashboard.html" class="btn-primary"><i class="bi bi-grid-1x2"></i> Parent Dashboard</a>
+      <a href="login.html" class="btn-secondary">Login</a>
+    </div>
+    <div class="rb-toggler">
+      <button class="rb-menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="rb-mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <ul class="rb-mobile-nav-list">
+    <li><a href="index.html" class="rb-mobile-nav-link active">Home 1</a></li>
+    <li><a href="home-2.html" class="rb-mobile-nav-link">Home 2</a></li>
+    <li><a href="about.html" class="rb-mobile-nav-link">About</a></li>
+    <li><a href="programs.html" class="rb-mobile-nav-link">Programs</a></li>
+    <li><a href="instructors.html" class="rb-mobile-nav-link">Instructors</a></li>
+    <li><a href="schedule.html" class="rb-mobile-nav-link">Schedule</a></li>
+    <li><a href="gallery.html" class="rb-mobile-nav-link">Gallery</a></li>
+    <li><a href="contact.html" class="rb-mobile-nav-link">Contact</a></li>
+  </ul>
+  <div class="rb-mobile-actions">
+    <a href="dashboard.html" class="btn-primary" style="width:100%;justify-content:center;"><i class="bi bi-grid-1x2"></i> Parent Dashboard</a>
+    <a href="login.html" class="btn-secondary" style="width:100%;justify-content:center;">Login</a>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:6px;">
+      <button class="rb-icon-btn" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+        <i class="bi bi-sun theme-icon-light"></i>
+        <i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i>
+      </button>
+      <button class="rb-icon-btn" data-dir-toggle title="Switch to RTL" aria-label="Switch to RTL">
+        <span class="dir-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero" aria-label="Hero — Find Their Stage">
+  <div class="hero-bg">
+    <img src="images/home1-hero.png" alt="Children performing on a recital stage with theatrical lighting" />
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="bi bi-award-fill"></i>
+        Kolkata's Premier Performing Arts Academy for Children
+      </div>
+      <h1 class="hero-title">Find Their Stage.<br><span>Build Their Confidence.</span></h1>
+      <p class="hero-desc">From their first graceful step to standing ovations — RhythmBloom Academy nurtures every young performer with expert instruction, joyful learning, and spectacular recitals.</p>
+      <div class="hero-actions">
+        <a href="programs.html" class="btn-primary btn-xl"><i class="bi bi-collection"></i> Explore Programs</a>
+        <a href="schedule.html" class="btn-ghost btn-xl"><i class="bi bi-calendar3"></i> View Schedule</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-value">500+</div><div class="hero-stat-label">Young Artists</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">18+</div><div class="hero-stat-label">Expert Faculty</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">12</div><div class="hero-stat-label">Annual Recitals</div></div>
+        <div class="hero-stat"><div class="hero-stat-value">5</div><div class="hero-stat-label">Art Forms</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><i class="bi bi-chevron-double-down"></i><span>Scroll</span></div>
+</section>
+
+<!-- ══ EXPLORE OUR PROGRAMS ══ -->
+<section class="section bg-secondary" id="programs" aria-labelledby="programs-heading">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title" id="programs-heading">Explore Our Programs</h2>
+      <p class="section-desc">Five distinct performing arts disciplines taught by passionate, qualified instructors in a safe and inspiring studio environment.</p>
+    </div>
+    <div class="programs-grid">
+      <!-- Classical Dance -->
+      <div class="program-card reveal reveal-delay-1">
+        <div class="program-card-img headshot-focus">
+          <img src="images/classic-1.png" alt="Classical Bharatanatyam dance" loading="lazy" />
+          <span class="program-tag">Classical Dance</span>
+        </div>
+        <div class="program-card-body">
+          <h3 class="program-card-title">Classical Dance</h3>
+          <p class="program-card-desc">Bharatanatyam and classical Indian dance traditions taught with authentic mudras, expressions, and devotion. A foundation in discipline and grace.</p>
+          <div class="program-meta">
+            <span class="program-meta-item"><i class="bi bi-person-fill"></i> Ages 5–16</span>
+            <span class="program-meta-item"><i class="bi bi-bar-chart-fill"></i> All Levels</span>
+            <span class="program-meta-item"><i class="bi bi-clock-fill"></i> 60 min / class</span>
+          </div>
+          <div class="program-card-footer">
+            <a href="programs.html#classical" class="btn-primary">View Batches</a>
+            <a href="dashboard.html" class="btn-secondary">Enroll Child</a>
+          </div>
+        </div>
+      </div>
+      <!-- Western Dance -->
+      <div class="program-card reveal reveal-delay-2">
+        <div class="program-card-img">
+          <img src="images/western-1.png" alt="Western contemporary dance" loading="lazy" />
+          <span class="program-tag">Western Dance</span>
+        </div>
+        <div class="program-card-body">
+          <h3 class="program-card-title">Western Dance</h3>
+          <p class="program-card-desc">Contemporary, jazz, and lyrical dance styles that build musicality, flexibility, and expressive movement through structured choreography.</p>
+          <div class="program-meta">
+            <span class="program-meta-item"><i class="bi bi-person-fill"></i> Ages 6–16</span>
+            <span class="program-meta-item"><i class="bi bi-bar-chart-fill"></i> All Levels</span>
+            <span class="program-meta-item"><i class="bi bi-clock-fill"></i> 60 min / class</span>
+          </div>
+          <div class="program-card-footer">
+            <a href="programs.html#western" class="btn-primary">View Batches</a>
+            <a href="dashboard.html" class="btn-secondary">Enroll Child</a>
+          </div>
+        </div>
+      </div>
+      <!-- Hip-Hop -->
+      <div class="program-card reveal reveal-delay-3">
+        <div class="program-card-img">
+          <img src="images/hiphop-1.png" alt="Hip-hop dance class for kids" loading="lazy" />
+          <span class="program-tag">Hip-Hop</span>
+        </div>
+        <div class="program-card-body">
+          <h3 class="program-card-title">Hip-Hop</h3>
+          <p class="program-card-desc">Age-appropriate rhythm, breaking basics, freezes, and choreography that channels energy into powerful self-expression and stage presence.</p>
+          <div class="program-meta">
+            <span class="program-meta-item"><i class="bi bi-person-fill"></i> Ages 7–16</span>
+            <span class="program-meta-item"><i class="bi bi-bar-chart-fill"></i> All Levels</span>
+            <span class="program-meta-item"><i class="bi bi-clock-fill"></i> 60 min / class</span>
+          </div>
+          <div class="program-card-footer">
+            <a href="programs.html#hiphop" class="btn-primary">View Batches</a>
+            <a href="dashboard.html" class="btn-secondary">Enroll Child</a>
+          </div>
+        </div>
+      </div>
+      <!-- Drama -->
+      <div class="program-card reveal reveal-delay-1">
+        <div class="program-card-img">
+          <img src="images/drama-1.png" alt="Children drama and acting class" loading="lazy" />
+          <span class="program-tag">Drama</span>
+        </div>
+        <div class="program-card-body">
+          <h3 class="program-card-title">Drama & Theatre</h3>
+          <p class="program-card-desc">Acting, storytelling, improvisation, and stage confidence. Children learn to inhabit characters, project voice, and captivate audiences.</p>
+          <div class="program-meta">
+            <span class="program-meta-item"><i class="bi bi-person-fill"></i> Ages 6–16</span>
+            <span class="program-meta-item"><i class="bi bi-bar-chart-fill"></i> All Levels</span>
+            <span class="program-meta-item"><i class="bi bi-clock-fill"></i> 75 min / class</span>
+          </div>
+          <div class="program-card-footer">
+            <a href="programs.html#drama" class="btn-primary">View Batches</a>
+            <a href="dashboard.html" class="btn-secondary">Enroll Child</a>
+          </div>
+        </div>
+      </div>
+      <!-- Vocals -->
+      <div class="program-card reveal reveal-delay-2">
+        <div class="program-card-img">
+          <img src="images/vocals.png" alt="Kids vocal and singing class" loading="lazy" />
+          <span class="program-tag">Vocals</span>
+        </div>
+        <div class="program-card-body">
+          <h3 class="program-card-title">Vocals & Voice</h3>
+          <p class="program-card-desc">Voice training, breath control, pitch, and performance skills. Children discover the power of their unique voice in a nurturing environment.</p>
+          <div class="program-meta">
+            <span class="program-meta-item"><i class="bi bi-person-fill"></i> Ages 5–16</span>
+            <span class="program-meta-item"><i class="bi bi-bar-chart-fill"></i> All Levels</span>
+            <span class="program-meta-item"><i class="bi bi-clock-fill"></i> 45 min / class</span>
+          </div>
+          <div class="program-card-footer">
+            <a href="programs.html#vocals" class="btn-primary">View Batches</a>
+            <a href="dashboard.html" class="btn-secondary">Enroll Child</a>
+          </div>
+        </div>
+      </div>
+      <!-- CTA Card -->
+      <div class="program-card reveal reveal-delay-3" style="position:relative; overflow:hidden; border:none; background:linear-gradient(135deg, rgba(41,37,43,0.45) 0%, rgba(99,58,104,0.35) 100%), url('images/advise.png') center/cover no-repeat;">
+        <div class="program-card-body" style="position:relative; z-index:1; justify-content:center; align-items:center; text-align:center; gap:20px; text-shadow:0 2px 8px rgba(0,0,0,0.6);">
+          <i class="bi bi-stars" style="font-size:3rem; color:#FFFFFF; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));"></i>
+          <h3 class="program-card-title" style="color:white; font-weight:600;">Not Sure Which Program?</h3>
+          <p class="program-card-desc" style="color:rgba(255,255,255,0.95); font-weight:500;">Our advisors will help you find the perfect performing arts fit for your child's age, interest, and personality.</p>
+          <a href="contact.html" class="btn-ghost btn-lg" style="margin-top:auto; background:rgba(0,0,0,0.4); border-color:rgba(255,255,255,0.7); color:white;">Talk to an Advisor</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FIND THEIR PERFECT CLASS ══ -->
+<section class="section" aria-labelledby="levels-heading">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Structured Learning</span>
+      <h2 class="section-title" id="levels-heading">Find Their Perfect Class</h2>
+      <p class="section-desc">Every child begins at the right level and progresses at their own pace through our thoughtfully designed curriculum.</p>
+    </div>
+    <div class="level-grid">
+      <div class="level-card reveal reveal-delay-1">
+        <div style="width:100%; height:190px; border-radius:var(--radius-md); overflow:hidden; margin-bottom:20px;">
+          <img src="images/beginer.png" alt="Beginner Level Performing Arts" style="width:100%; height:100%; object-fit:cover; transition:transform var(--trans-slow);" />
+        </div>
+        <div class="level-icon"><i class="bi bi-flower1"></i></div>
+        <h3 class="level-title">Beginner</h3>
+        <p class="level-desc">A welcoming first step into performing arts. Focus on fundamentals, body awareness, rhythm, and building a love for movement and expression — no prior experience needed.</p>
+        <div class="level-tags">
+          <span class="tag">Ages 5–8</span>
+          <span class="tag">No Experience</span>
+          <span class="tag">Fun-first</span>
+        </div>
+        <a href="schedule.html?level=beginner" class="btn-secondary w-100" style="justify-content:center;">View Beginner Batches</a>
+      </div>
+      <div class="level-card reveal reveal-delay-2">
+        <div style="width:100%; height:190px; border-radius:var(--radius-md); overflow:hidden; margin-bottom:20px;">
+          <img src="images/intermediate.png" alt="Intermediate Level Performing Arts" style="width:100%; height:100%; object-fit:cover; transition:transform var(--trans-slow);" />
+        </div>
+        <div class="level-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+        <h3 class="level-title">Intermediate</h3>
+        <p class="level-desc">Building on foundations with more complex choreography, technical refinement, performance skills, and preparation for recitals and competitions.</p>
+        <div class="level-tags">
+          <span class="tag">Ages 8–13</span>
+          <span class="tag">Some Experience</span>
+          <span class="tag">Performance Ready</span>
+        </div>
+        <a href="schedule.html?level=intermediate" class="btn-secondary w-100" style="justify-content:center;">View Intermediate Batches</a>
+      </div>
+      <div class="level-card reveal reveal-delay-3">
+        <div style="width:100%; height:190px; border-radius:var(--radius-md); overflow:hidden; margin-bottom:20px;">
+          <img src="images/advanced.png" alt="Advanced Level Performing Arts" style="width:100%; height:100%; object-fit:cover; transition:transform var(--trans-slow);" />
+        </div>
+        <div class="level-icon"><i class="bi bi-trophy-fill"></i></div>
+        <h3 class="level-title">Advanced</h3>
+        <p class="level-desc">For serious young artists committed to excellence. Rigorous training in technique, artistry, stage presence, and competitive or solo performance preparation.</p>
+        <div class="level-tags">
+          <span class="tag">Ages 10–16</span>
+          <span class="tag">Experienced</span>
+          <span class="tag">Competition Track</span>
+        </div>
+        <a href="schedule.html?level=advanced" class="btn-secondary w-100" style="justify-content:center;">View Advanced Batches</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY PERFORMING ARTS MATTER ══ -->
+<section class="section alt-bg" style="background:var(--bg-secondary);" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="why-matter-layout">
+      <div class="why-matter-image reveal">
+        <div class="img-ratio ratio-4-3" style="border-radius:var(--radius-xl); box-shadow:var(--shadow-xl); overflow:hidden; border: 1px solid var(--divider);">
+          <img src="images/rythm_bloom_diff.png" alt="The RhythmBloom Difference — Dance and performing arts training" />
+        </div>
+      </div>
+      <div class="why-matter-content reveal reveal-delay-2">
+        <span class="section-label">The RhythmBloom Difference</span>
+        <h2 class="section-title" id="why-heading">Why Performing Arts Matter</h2>
+        <p class="section-desc" style="max-width:100%; margin-bottom: 24px;">Beyond technique and performance — we are shaping confident, creative, and resilient young people through structured, joyful arts education.</p>
+      </div>
+
+      <div class="why-benefits-grid reveal reveal-delay-3">
+          <div style="padding: 16px; background: var(--bg-card); border: 1px solid var(--divider); border-radius: var(--radius-md);">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+              <i class="bi bi-person-check-fill" style="color:var(--primary); font-size:20px;"></i>
+              <strong style="font-family:var(--font-heading); font-size:var(--text-md); font-weight:600;">Confidence</strong>
+            </div>
+            <p style="font-size:var(--text-xs); color:var(--text-secondary); line-height:1.6;">Self-assurance that transfers to school and stage.</p>
+          </div>
+          <div style="padding: 16px; background: var(--bg-card); border: 1px solid var(--divider); border-radius: var(--radius-md);">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+              <i class="bi bi-palette2" style="color:var(--primary); font-size:20px;"></i>
+              <strong style="font-family:var(--font-heading); font-size:var(--text-md); font-weight:600;">Creativity</strong>
+            </div>
+            <p style="font-size:var(--text-xs); color:var(--text-secondary); line-height:1.6;">Imaginative thinking and artistic voice.</p>
+          </div>
+          <div style="padding: 16px; background: var(--bg-card); border: 1px solid var(--divider); border-radius: var(--radius-md);">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+              <i class="bi bi-activity" style="color:var(--primary); font-size:20px;"></i>
+              <strong style="font-family:var(--font-heading); font-size:var(--text-md); font-weight:600;">Coordination</strong>
+            </div>
+            <p style="font-size:var(--text-xs); color:var(--text-secondary); line-height:1.6;">Motor skills, spatial awareness, and rhythm.</p>
+          </div>
+          <div style="padding: 16px; background: var(--bg-card); border: 1px solid var(--divider); border-radius: var(--radius-md);">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+              <i class="bi bi-shield-check" style="color:var(--primary); font-size:20px;"></i>
+              <strong style="font-family:var(--font-heading); font-size:var(--text-md); font-weight:600;">Safe Space</strong>
+            </div>
+            <p style="font-size:var(--text-xs); color:var(--text-secondary); line-height:1.6;">Inclusive, nurturing learning environment.</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+        <h4 class="value-title">Expression</h4>
+        <p class="value-desc">Children learn to communicate emotions through movement, voice, and character.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <div class="value-icon"><i class="bi bi-people-fill"></i></div>
+        <h4 class="value-title">Teamwork</h4>
+        <p class="value-desc">Group performances teach collaboration, respect, and unity on stage.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-3">
+        <div class="value-icon"><i class="bi bi-journal-bookmark-fill"></i></div>
+        <h4 class="value-title">Discipline</h4>
+        <p class="value-desc">Regular practice and commitment cultivate a strong lifelong work ethic.</p>
+      </div>
+      <div class="value-card reveal reveal-delay-4">
+        <div class="value-icon"><i class="bi bi-star-fill"></i></div>
+        <h4 class="value-title">Stage Presence</h4>
+        <p class="value-desc">Owning the stage creates young leaders with poise, charisma, and confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS ACCENT BANNER ══ -->
+<section class="section-sm" aria-label="Academy achievements" style="padding: 40px 0;">
+  <div class="container">
+    <div style="background: linear-gradient(135deg, var(--primary) 0%, #4E2C53 100%); border-radius: var(--radius-lg); padding: 40px 28px; box-shadow: var(--shadow-md);" class="reveal">
+      <div class="stats-row">
+        <div class="stat-item"><div class="stat-number">500+</div><div class="stat-label">Young Artists Trained</div></div>
+        <div class="stat-item"><div class="stat-number">12</div><div class="stat-label">Annual Recitals</div></div>
+        <div class="stat-item"><div class="stat-number">18+</div><div class="stat-label">Expert Instructors</div></div>
+        <div class="stat-item"><div class="stat-number">96%</div><div class="stat-label">Parent Satisfaction</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MEET OUR INSTRUCTORS — OUR FACULTY ══ -->
+<section class="section alt-bg" style="background:var(--bg-secondary);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider);" aria-labelledby="instructors-heading">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label" style="background:var(--primary-subtle);color:var(--primary);padding:4px 12px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;display:inline-block;margin-bottom:12px;">Our Faculty</span>
+      <h2 class="section-title" id="instructors-heading">Meet Our Instructors</h2>
+      <p class="section-desc">Passionate performing artists who are equally dedicated educators — shaping young talent with expertise and care.</p>
+    </div>
+    <div class="instructors-grid home-instructors-grid">
+      <div class="instructor-card reveal reveal-delay-1">
+        <div class="instructor-img">
+          <img src="images/teacher-1.png" alt="Priya Sharma — Classical Dance Instructor" loading="lazy" />
+        </div>
+        <div class="instructor-body">
+          <h3 class="instructor-name">Priya Sharma</h3>
+          <p class="instructor-spec">Classical Dance — Bharatanatyam</p>
+          <p class="instructor-exp"><i class="bi bi-award"></i> 14 years teaching experience</p>
+          <p class="instructor-desc">A disciple of the Kalakshetra tradition, Priya brings authentic classical heritage to every class while creating a nurturing, joyful learning atmosphere for her young students.</p>
+          <div class="instructor-styles">
+            <span class="tag">Bharatanatyam</span>
+            <span class="tag">Kuchipudi</span>
+            <span class="tag">Abhinaya</span>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card reveal reveal-delay-2">
+        <div class="instructor-img">
+          <img src="images/teacher-2.png" alt="Meera Kapoor — Western Dance Instructor" loading="lazy" />
+        </div>
+        <div class="instructor-body">
+          <h3 class="instructor-name">Meera Kapoor</h3>
+          <p class="instructor-spec">Western Dance — Contemporary & Jazz</p>
+          <p class="instructor-exp"><i class="bi bi-award"></i> 10 years teaching experience</p>
+          <p class="instructor-desc">Trained in Mumbai and trained further at the Broadway Dance Center, Meera fuses technical precision with creative freedom to build expressive young dancers.</p>
+          <div class="instructor-styles">
+            <span class="tag">Contemporary</span>
+            <span class="tag">Jazz</span>
+            <span class="tag">Lyrical</span>
+          </div>
+        </div>
+      </div>
+      <div class="instructor-card reveal reveal-delay-3">
+        <div class="instructor-img">
+          <img src="images/teacher-3.png" alt="Rahul Singh — Hip-Hop Instructor" loading="lazy" />
+        </div>
+        <div class="instructor-body">
+          <h3 class="instructor-name">Rahul Singh</h3>
+          <p class="instructor-spec">Hip-Hop & Urban Dance</p>
+          <p class="instructor-exp"><i class="bi bi-award"></i> 8 years teaching experience</p>
+          <p class="instructor-desc">A former national-level competition champion, Rahul channels his passion for hip-hop culture into age-appropriate, energetic classes that every child loves attending.</p>
+          <div class="instructor-styles">
+            <span class="tag">Breaking</span>
+            <span class="tag">Popping</span>
+            <span class="tag">Freestyle</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-xl">
+      <a href="instructors.html" class="btn-secondary btn-lg"><i class="bi bi-people"></i> View All Instructors</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ UPCOMING CLASSES & BATCHES ══ -->
+<section class="section alt-bg" style="background:var(--bg-secondary);" aria-labelledby="upcoming-heading">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Current Term</span>
+      <h2 class="section-title" id="upcoming-heading">Upcoming Classes & Batches</h2>
+      <p class="section-desc">New term batches starting September 2026. Limited seats available — secure your child's spot today.</p>
+    </div>
+    <div class="schedule-grid reveal">
+      <div class="schedule-card">
+        <div class="schedule-color"></div>
+        <div class="schedule-info">
+          <h4 class="schedule-program">Bharatanatyam — Beginner</h4>
+          <div class="schedule-meta-row">
+            <span class="schedule-meta-item"><i class="bi bi-person-fill"></i> Ages 5–8</span>
+            <span class="schedule-meta-item"><i class="bi bi-calendar3"></i> Sat & Sun</span>
+            <span class="schedule-meta-item"><i class="bi bi-clock"></i> 10:00 – 11:00 AM</span>
+          </div>
+          <p class="schedule-instructor"><i class="bi bi-person-badge"></i> Priya Sharma &nbsp;|&nbsp; <span class="badge badge-success">8 Seats Left</span></p>
+          <a href="dashboard.html" class="btn-primary enroll-btn" data-batch="Bharatanatyam Beginner Saturday 10AM">Enroll in This Batch</a>
+        </div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-color"></div>
+        <div class="schedule-info">
+          <h4 class="schedule-program">Contemporary Dance — Intermediate</h4>
+          <div class="schedule-meta-row">
+            <span class="schedule-meta-item"><i class="bi bi-person-fill"></i> Ages 9–13</span>
+            <span class="schedule-meta-item"><i class="bi bi-calendar3"></i> Mon, Wed, Fri</span>
+            <span class="schedule-meta-item"><i class="bi bi-clock"></i> 4:30 – 5:30 PM</span>
+          </div>
+          <p class="schedule-instructor"><i class="bi bi-person-badge"></i> Meera Kapoor &nbsp;|&nbsp; <span class="badge badge-warning">3 Seats Left</span></p>
+          <a href="dashboard.html" class="btn-primary enroll-btn" data-batch="Contemporary Intermediate MWF 4:30PM">Enroll in This Batch</a>
+        </div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-color"></div>
+        <div class="schedule-info">
+          <h4 class="schedule-program">Hip-Hop — Beginner</h4>
+          <div class="schedule-meta-row">
+            <span class="schedule-meta-item"><i class="bi bi-person-fill"></i> Ages 7–12</span>
+            <span class="schedule-meta-item"><i class="bi bi-calendar3"></i> Tue & Thu</span>
+            <span class="schedule-meta-item"><i class="bi bi-clock"></i> 5:00 – 6:00 PM</span>
+          </div>
+          <p class="schedule-instructor"><i class="bi bi-person-badge"></i> Rahul Singh &nbsp;|&nbsp; <span class="badge badge-success">12 Seats Left</span></p>
+          <a href="dashboard.html" class="btn-primary enroll-btn" data-batch="Hip-Hop Beginner Tue Thu 5PM">Enroll in This Batch</a>
+        </div>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-color"></div>
+        <div class="schedule-info">
+          <h4 class="schedule-program">Drama & Theatre — Intermediate</h4>
+          <div class="schedule-meta-row">
+            <span class="schedule-meta-item"><i class="bi bi-person-fill"></i> Ages 8–14</span>
+            <span class="schedule-meta-item"><i class="bi bi-calendar3"></i> Saturday</span>
+            <span class="schedule-meta-item"><i class="bi bi-clock"></i> 2:00 – 3:15 PM</span>
+          </div>
+          <p class="schedule-instructor"><i class="bi bi-person-badge"></i> Ananya Bose &nbsp;|&nbsp; <span class="badge badge-error">Full — Waitlist</span></p>
+          <a href="contact.html" class="btn-secondary">Join Waitlist</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-xl">
+      <a href="schedule.html" class="btn-primary btn-lg"><i class="bi bi-calendar3"></i> View Full Schedule</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RECITAL HIGHLIGHTS ══ -->
+<section class="section" aria-labelledby="recital-heading">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">The RhythmBloom Stage</span>
+      <h2 class="section-title" id="recital-heading">Recital Highlights</h2>
+      <p class="section-desc">Twice a year, our students step into the spotlight at our spectacular production-quality recitals — a moment every family treasures forever.</p>
+    </div>
+    <div class="recital-grid reveal">
+      <div class="recital-img-pane">
+        <img src="images/gallery-hero.png" alt="Annual recital stage performance with theatrical lighting" />
+      </div>
+      <div class="recital-content-pane">
+        <span class="section-label" style="margin-bottom:16px;">Annual Showcase 2026</span>
+        <h3 style="font-size:1.875rem;font-weight:600;margin-bottom:16px;letter-spacing:-0.02em;">Colours of Movement</h3>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:28px;">Our annual showcase brings together all programs in a spectacular two-act performance featuring over 200 young artists. Professional stage lighting, original costumes, and choreography by our faculty create an unforgettable evening for families.</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:32px;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:var(--text-secondary);">
+            <i class="bi bi-calendar-event" style="color:var(--primary);font-size:18px;"></i>
+            <span><strong>Date:</strong> December 14 & 15, 2026</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:var(--text-secondary);">
+            <i class="bi bi-geo-alt-fill" style="color:var(--primary);font-size:18px;"></i>
+            <span><strong>Venue:</strong> Rabindra Sadan, Kolkata</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:0.9rem;color:var(--text-secondary);">
+            <i class="bi bi-ticket-fill" style="color:var(--primary);font-size:18px;"></i>
+            <span><strong>Tickets:</strong> Available for enrolled families</span>
+          </div>
+        </div>
+        <a href="gallery.html" class="btn-primary btn-lg"><i class="bi bi-images"></i> View Gallery</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PARENT TESTIMONIALS ══ -->
+<section class="section alt-bg" style="background:var(--bg-secondary);" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Parent Stories</span>
+      <h2 class="section-title" id="testimonials-heading">What Parents Say</h2>
+      <p class="section-desc">Real words from the families who trust us with their child's performing arts journey.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+        <p class="testimonial-text">My daughter has transformed completely. She used to be so shy — now she performs on stage and speaks in class with such confidence. RhythmBloom has given her a true gift.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&q=80&fit=crop" alt="Sunita Agarwal" /></div>
+          <div>
+            <div class="testimonial-author-name">Sunita Agarwal</div>
+            <div class="testimonial-author-role">Mother of Kavya, 9 — Bharatanatyam</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+        <p class="testimonial-text">The instructors are phenomenal — patient, encouraging, and genuinely passionate. The recital was a professional-quality production. Our whole family cried happy tears watching our son perform.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80&fit=crop" alt="Rohit Mehta" /></div>
+          <div>
+            <div class="testimonial-author-name">Rohit Mehta</div>
+            <div class="testimonial-author-role">Father of Arjun, 12 — Hip-Hop</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+        <p class="testimonial-text">The Parent Dashboard is genuinely excellent — I can track attendance, see upcoming recital details, and manage fees all in one place. Enrollment was so simple and clear.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=150&q=80&fit=crop" alt="Deepa Krishnan" /></div>
+          <div>
+            <div class="testimonial-author-name">Deepa Krishnan</div>
+            <div class="testimonial-author-role">Mother of twins — Drama & Vocals</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL ENROLLMENT CTA ══ -->
+<section class="cta-section" aria-label="Enrollment call to action">
+  <div class="cta-bg">
+    <img src="images/home1-cta.png" alt="Children on stage" />
+  </div>
+  <div class="container">
+    <div class="cta-content reveal">
+      <p class="cta-label">New Term Enrollment Open</p>
+      <h2 class="cta-title">Let Their Confidence Take Center Stage</h2>
+      <p class="cta-desc">September 2026 batches are filling fast. Give your child the gift of performing arts — confidence, creativity, and the thrill of the stage.</p>
+      <div class="cta-actions">
+        <a href="dashboard.html" class="btn-primary btn-xl"><i class="bi bi-grid-1x2"></i> Enroll Now</a>
+        <a href="programs.html" class="btn-ghost btn-xl"><i class="bi bi-collection"></i> Explore Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="rb-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="images/logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-light" />
+            <img src="images/dark_logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-dark" style="display:none;" />
+          </div>
+          <div>
+            <div class="footer-brand-name">RhythmBloom Academy</div>
+            <div class="footer-brand-tagline">Move. Perform. Shine.</div>
+          </div>
+        </div>
+        <p class="footer-about">Kolkata's premier Kids Dance & Performing Arts Academy. Nurturing young performers in classical dance, western dance, hip-hop, drama, and vocals since 2014.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="footer-social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Programs</h4>
+        <ul class="footer-links">
+          <li><a href="programs.html#classical">Classical Dance</a></li>
+          <li><a href="programs.html#western">Western Dance</a></li>
+          <li><a href="programs.html#hiphop">Hip-Hop</a></li>
+          <li><a href="programs.html#drama">Drama & Theatre</a></li>
+          <li><a href="programs.html#vocals">Vocals & Voice</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="schedule.html">Class Schedule</a></li>
+          <li><a href="instructors.html">Our Instructors</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="dashboard.html">Parent Dashboard</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact Us</h4>
+        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>14A Park Street, Kolkata 700 016, West Bengal</span></div>
+        <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>+91 98300 12345</span></div>
+        <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>hello@rhythmbloom.in</span></div>
+        <h4 class="footer-col-title" style="margin-top:20px;">Studio Hours</h4>
+        <div class="footer-contact-item"><i class="bi bi-clock-fill"></i><span>Mon – Fri: 3:00 PM – 8:00 PM<br>Sat – Sun: 9:00 AM – 6:00 PM</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 RhythmBloom Academy. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-container" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

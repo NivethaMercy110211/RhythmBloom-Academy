@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Inquiries & Admissions | RhythmBloom Academy</title>
+  <meta name="description" content="Get in touch with RhythmBloom Academy for admissions, program inquiries, trial class bookings, or general questions. Located in Park Street, Kolkata." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700;9..40,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/dark-theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/desktop.css" />
+  <link rel="stylesheet" href="css/tablet.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <style>
+    .page-hero { padding:100px 0 72px; background:linear-gradient(135deg,var(--primary) 0%,#9B6BA0 100%); position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; top:-80px; right:-80px; width:400px; height:400px; border-radius:50%; background:rgba(255,255,255,.06); }
+    .contact-layout { display:grid; grid-template-columns:1fr 1.5fr; gap:40px; align-items:start; }
+    .contact-card { background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:36px 32px; box-shadow:var(--shadow-card); }
+    .contact-info-item { display:flex; gap:16px; align-items:flex-start; padding:18px 0; border-bottom:1px solid var(--divider); }
+    .contact-info-item:last-child { border-bottom:none; }
+    .contact-info-icon { width:46px; height:46px; background:var(--primary-subtle); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; font-size:20px; color:var(--primary); flex-shrink:0; }
+    .contact-info-label { font-size:var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); margin-bottom:4px; }
+    .contact-info-value { font-size:.9375rem; color:var(--text-primary); font-weight:500; line-height:1.6; }
+    .contact-form-card { background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:36px 32px; box-shadow:var(--shadow-card); }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .form-group { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+    .form-label { font-size:var(--text-sm); font-weight:600; color:var(--text-primary); }
+    .form-control {
+      padding:12px 14px; border:1.5px solid var(--divider); border-radius:var(--radius-md);
+      background:var(--bg-primary); color:var(--text-primary); font-size:var(--text-sm);
+      font-family:var(--font-body); transition:border-color var(--trans-fast),box-shadow var(--trans-fast);
+      outline:none;
+    }
+    .form-control:focus { border-color:var(--primary); box-shadow:0 0 0 3px var(--primary-subtle); }
+    .form-control.is-invalid { border-color:var(--error); }
+    .form-error { font-size:var(--text-xs); color:var(--error); margin-top:4px; display:none; }
+    .form-control textarea { resize:vertical; min-height:120px; }
+    @media(max-width:576px) {
+      .contact-layout { grid-template-columns: 1fr !important; gap: 28px; }
+      .form-row { grid-template-columns: 1fr !important; gap: 12px; }
+      .inquiry-types { grid-template-columns: 1fr !important; gap: 8px; }
+      .contact-card, .contact-form-card { padding: 24px 18px; }
+    }
+    .inquiry-types { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:16px; }
+    .inquiry-type { border:1.5px solid var(--divider); border-radius:var(--radius-md); padding:12px; display:flex; align-items:center; gap:10px; cursor:pointer; transition:all var(--trans-fast); background:transparent; width:100%; }
+    .inquiry-type.selected { border-color:var(--primary); background:var(--primary-subtle); }
+    .inquiry-type i { font-size:18px; color:var(--primary); }
+    .inquiry-type span { font-size:var(--text-sm); font-weight:600; color:var(--text-primary); }
+    .map-wrap { border-radius:var(--radius-xl); overflow:hidden; height:300px; background:var(--bg-secondary); display:flex; align-items:center; justify-content:center; border:1px solid var(--divider); margin-top:24px; }
+    .faq-section { margin-top:24px; }
+    @media(max-width:900px) { .contact-layout { grid-template-columns:1fr; } .form-row { grid-template-columns:1fr; } .inquiry-types { grid-template-columns:1fr 1fr; } }
+    @media(max-width:576px) { .contact-card { padding:22px 18px; } .contact-form-card { padding:22px 18px; } .inquiry-types { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<nav class="rb-navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="rb-brand">
+      <div class="rb-logo-wrap">
+        <img src="images/logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-light" />
+        <img src="images/dark_logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-dark" style="display:none;" />
+      </div>
+      <div class="rb-brand-text"><span class="rb-brand-name">RhythmBloom Academy</span><span class="rb-brand-tagline">Move. Perform. Shine.</span></div>
+    </a>
+    <nav class="rb-nav"><ul class="rb-nav-list">
+      <li><a href="index.html" class="rb-nav-link">Home 1</a></li>
+      <li><a href="home-2.html" class="rb-nav-link">Home 2</a></li>
+      <li><a href="about.html" class="rb-nav-link">About</a></li>
+      <li><a href="programs.html" class="rb-nav-link">Programs</a></li>
+      <li><a href="instructors.html" class="rb-nav-link">Instructors</a></li>
+      <li><a href="schedule.html" class="rb-nav-link">Schedule</a></li>
+      <li><a href="gallery.html" class="rb-nav-link">Gallery</a></li>
+      <li><a href="contact.html" class="rb-nav-link active">Contact</a></li>
+    </ul></nav>
+    <div class="rb-nav-right">
+      <button class="rb-icon-btn" data-theme-toggle aria-label="Toggle theme"><i class="bi bi-sun theme-icon-light"></i><i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i></button>
+      <button class="rb-icon-btn" data-dir-toggle aria-label="Toggle RTL"><span class="dir-label" style="font-size:.7rem;font-weight:700">RTL</span></button>
+      <a href="dashboard.html" class="btn-primary"><i class="bi bi-grid-1x2"></i> Parent Dashboard</a>
+      <a href="login.html" class="btn-secondary">Login</a>
+    </div>
+    <div class="rb-toggler">
+      <button class="rb-menu-toggle" aria-label="Open menu"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</nav>
+<div class="rb-mobile-menu">
+  <ul class="rb-mobile-nav-list">
+    <li><a href="index.html" class="rb-mobile-nav-link">Home 1</a></li>
+    <li><a href="home-2.html" class="rb-mobile-nav-link">Home 2</a></li>
+    <li><a href="about.html" class="rb-mobile-nav-link">About</a></li>
+    <li><a href="programs.html" class="rb-mobile-nav-link">Programs</a></li>
+    <li><a href="instructors.html" class="rb-mobile-nav-link">Instructors</a></li>
+    <li><a href="schedule.html" class="rb-mobile-nav-link">Schedule</a></li>
+    <li><a href="gallery.html" class="rb-mobile-nav-link">Gallery</a></li>
+    <li><a href="contact.html" class="rb-mobile-nav-link active">Contact</a></li>
+  </ul>
+  <div class="rb-mobile-actions">
+    <a href="dashboard.html" class="btn-primary" style="width:100%;justify-content:center;"><i class="bi bi-grid-1x2"></i> Parent Dashboard</a>
+    <a href="login.html" class="btn-secondary" style="width:100%;justify-content:center;">Login</a>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:6px;">
+      <button class="rb-icon-btn" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+        <i class="bi bi-sun theme-icon-light"></i>
+        <i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i>
+      </button>
+      <button class="rb-icon-btn" data-dir-toggle title="Switch to RTL" aria-label="Switch to RTL">
+        <span class="dir-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="images/contact-hero.png" alt="Contact hero banner" /></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="text-center" style="color:white;position:relative;z-index:1;">
+      <span style="display:inline-block;font-size:var(--text-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:14px;">We'd Love to Hear From You</span>
+      <h1 style="font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.25rem);font-weight:600;color:white;margin-bottom:16px;letter-spacing:-.02em;">Contact Us</h1>
+      <p style="font-size:1.0625rem;color:rgba(255,255,255,.82);max-width:540px;margin:0 auto;">Admissions queries, program advice, trial class bookings, or just a hello — we respond to every message within one business day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-card reveal" style="max-width:900px;margin:0 auto;">
+          <h2 style="font-family:var(--font-heading);font-size:1.375rem;font-weight:600;margin-bottom:4px;letter-spacing:-.01em;">Get in Touch</h2>
+          <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:16px;">We're happy to answer any questions about programs, admissions, scheduling, or fees.</p>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div><div class="contact-info-label">Studio Address</div><div class="contact-info-value">14A Park Street, 3rd Floor<br>Kolkata 700 016, West Bengal, India</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+            <div><div class="contact-info-label">Phone / WhatsApp</div><div class="contact-info-value">+91 98300 12345</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div><div class="contact-info-label">Email</div><div class="contact-info-value">hello@rhythmbloom.in</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="bi bi-clock-fill"></i></div>
+            <div><div class="contact-info-label">Studio Hours</div><div class="contact-info-value">Mon – Fri: 3:00 PM – 8:00 PM<br>Sat – Sun: 9:00 AM – 6:00 PM</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><i class="bi bi-reply-fill"></i></div>
+            <div><div class="contact-info-label">Response Time</div><div class="contact-info-value">Within 1 business day</div></div>
+          </div>
+          <div style="margin-top:20px;">
+            <p style="font-size:var(--text-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;">Follow Us</p>
+            <div style="display:flex;gap:10px;">
+              <a href="#" class="footer-social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="footer-social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="footer-social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+              <a href="#" class="footer-social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGE FORM -->
+<section class="section alt-bg" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="contact-form-card reveal" style="max-width:900px;margin:0 auto;">
+        <h2 style="font-family:var(--font-heading);font-size:1.375rem;font-weight:600;margin-bottom:4px;letter-spacing:-.01em;">Send Us a Message</h2>
+        <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:24px;">Fill in the form below and we'll get back to you within one business day.</p>
+
+        <!-- Inquiry type -->
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);margin-bottom:10px;">What are you enquiring about?</p>
+        <div class="inquiry-types">
+          <button type="button" class="inquiry-type selected" id="inq-admissions" onclick="selectInquiry(this)"><i class="bi bi-person-plus"></i><span>Admissions</span></button>
+          <button type="button" class="inquiry-type" id="inq-trial" onclick="selectInquiry(this)"><i class="bi bi-play-circle"></i><span>Trial Class</span></button>
+          <button type="button" class="inquiry-type" id="inq-fees" onclick="selectInquiry(this)"><i class="bi bi-cash-coin"></i><span>Fees & Schedule</span></button>
+          <button type="button" class="inquiry-type" id="inq-other" onclick="selectInquiry(this)"><i class="bi bi-chat-text"></i><span>Other</span></button>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="c-parent-name">Parent Name <span style="color:var(--error)">*</span></label>
+              <input type="text" id="c-parent-name" class="form-control" placeholder="Your full name" required />
+              <span class="form-error" id="err-parent-name"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-child-name">Child's Name</label>
+              <input type="text" id="c-child-name" class="form-control" placeholder="Child's name (optional)" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="c-email">Email Address <span style="color:var(--error)">*</span></label>
+              <input type="email" id="c-email" class="form-control" placeholder="your@email.com" required />
+              <span class="form-error" id="err-email"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-phone">Phone / WhatsApp <span style="color:var(--error)">*</span></label>
+              <input type="tel" id="c-phone" class="form-control" placeholder="+91 98000 00000" required />
+              <span class="form-error" id="err-phone"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="c-program">Program of Interest</label>
+              <select id="c-program" class="form-control">
+                <option value="">Select a program</option>
+                <option>Classical Dance</option>
+                <option>Western Dance</option>
+                <option>Hip-Hop</option>
+                <option>Drama & Theatre</option>
+                <option>Vocals & Voice</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-age">Child's Age</label>
+              <select id="c-age" class="form-control">
+                <option value="">Select age range</option>
+                <option>5–7 years</option>
+                <option>8–10 years</option>
+                <option>11–13 years</option>
+                <option>14–16 years</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="c-message">Your Message <span style="color:var(--error)">*</span></label>
+            <textarea id="c-message" class="form-control" style="min-height:120px;resize:vertical;" placeholder="Tell us about your child and any questions you have..." required></textarea>
+            <span class="form-error" id="err-message"></span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:20px;">
+            <input type="checkbox" id="c-consent" style="margin-top:3px;accent-color:var(--primary);width:16px;height:16px;" />
+            <label for="c-consent" style="font-size:var(--text-xs);color:var(--text-muted);line-height:1.6;cursor:pointer;">I consent to RhythmBloom Academy contacting me at the details provided above. I understand my data will be handled in accordance with the Privacy Policy.</label>
+          </div>
+          <button type="submit" id="contact-submit" class="btn-primary btn-lg" style="width:100%;justify-content:center;">
+            <i class="bi bi-send-fill"></i> Send Message
+          </button>
+
+          <!-- Success state -->
+          <div id="contact-success" style="display:none;text-align:center;padding:32px;background:var(--bg-secondary);border-radius:var(--radius-lg);margin-top:16px;">
+            <div style="width:64px;height:64px;background:var(--success-subtle,#E8F5EE);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;"><i class="bi bi-check-circle-fill" style="font-size:28px;color:var(--success);"></i></div>
+            <h4 style="font-family:var(--font-heading);font-weight:600;margin-bottom:8px;color:var(--text-primary);">Message Sent!</h4>
+            <p style="font-size:var(--text-sm);color:var(--text-muted);">Thank you! Our admissions team will reply within one business day. WhatsApp us at <strong>+91 98300 12345</strong> for a faster response.</p>
+          </div>
+        </form>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section" aria-labelledby="location-heading">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Find Our Studio</span>
+      <h2 class="section-title" id="location-heading">Visit RhythmBloom Academy</h2>
+    </div>
+    <div class="map-wrap reveal" style="max-width:900px;margin:0 auto;">
+      <div style="text-align:center;color:var(--text-muted);">
+        <i class="bi bi-map" style="font-size:3rem;margin-bottom:12px;display:block;"></i>
+        <div style="font-weight:600;color:var(--text-primary);margin-bottom:4px;">14A Park Street, Kolkata</div>
+        <a href="https://maps.google.com?q=Park+Street+Kolkata" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:12px;display:inline-flex;">
+          <i class="bi bi-box-arrow-up-right"></i> Open in Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section alt-bg" style="background:var(--bg-secondary);" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-label">Quick Answers</span>
+      <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+    </div>
+    <div style="max-width:800px;margin:0 auto;" class="reveal">
+      <div class="faq-item">
+        <button class="faq-question"><div class="faq-icon"><i class="bi bi-plus-lg"></i></div><span>What age can my child start?</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We welcome children from age 5 onwards. Our youngest students join the Beginner batches for Classical Dance or Vocals. For Hip-Hop we recommend age 7+. There is no upper age limit for our programs.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><div class="faq-icon"><i class="bi bi-plus-lg"></i></div><span>Do you offer trial classes before enrolling?</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes! We offer a complimentary trial class for new students in any program. Simply contact us to schedule a trial and your child can experience the class before you commit to enrollment.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><div class="faq-icon"><i class="bi bi-plus-lg"></i></div><span>How much does enrollment cost?</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Fees vary by program and number of classes per week. Monthly fees range from ₹2,500 to ₹4,500 depending on the program. There is a one-time annual registration fee of ₹1,000. Full fee details are available in the Parent Dashboard after registration.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><div class="faq-icon"><i class="bi bi-plus-lg"></i></div><span>Can my child join mid-term?</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, mid-term enrollment is possible for most programs subject to seat availability. Your child will be assessed by the instructor to place them in the appropriate level. Contact us to check current seat availability.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><div class="faq-icon"><i class="bi bi-plus-lg"></i></div><span>Is there a recital costume fee?</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes — costume fees are charged once per term for students participating in the showcase. Fees vary by program (typically ₹1,500 to ₹3,500) and are announced 8 weeks before each showcase with full details.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><div class="faq-icon"><i class="bi bi-plus-lg"></i></div><span>What if my child misses a class?</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Students are welcome to attend a make-up class in a batch of the same level within the same term, subject to availability. We track attendance through the Parent Dashboard so families always have a clear picture of their child's progress.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"><img src="images/contact-cta.png" alt="RhythmBloom academy admissions" /></div>
+  <div class="container">
+    <div class="cta-content reveal">
+      <p class="cta-label">Visit Our Studio</p>
+      <h2 class="cta-title">Schedule a Complimentary Trial Class</h2>
+      <p class="cta-desc">Experience our world-class faculty and studios firsthand. September 2026 term enrollment is open.</p>
+      <div class="cta-actions">
+        <a href="dashboard.html" class="btn-primary btn-xl"><i class="bi bi-person-plus-fill"></i> Enroll Now</a>
+        <a href="schedule.html" class="btn-ghost btn-xl"><i class="bi bi-calendar3"></i> View Schedule</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="rb-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand"><div class="footer-logo-wrap"><img src="images/logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-light" /><img src="images/dark_logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-dark" style="display:none;" /></div><div><div class="footer-brand-name">RhythmBloom Academy</div><div class="footer-brand-tagline">Move. Perform. Shine.</div></div></div><p class="footer-about">Kolkata's premier Kids Dance & Performing Arts Academy since 2014.</p><div class="footer-social"><a href="#" class="footer-social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" class="footer-social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" class="footer-social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" class="footer-social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a></div></div>
+      <div><h4 class="footer-col-title">Programs</h4><ul class="footer-links"><li><a href="programs.html#classical">Classical Dance</a></li><li><a href="programs.html#western">Western Dance</a></li><li><a href="programs.html#hiphop">Hip-Hop</a></li><li><a href="programs.html#drama">Drama</a></li><li><a href="programs.html#vocals">Vocals</a></li></ul></div>
+      <div><h4 class="footer-col-title">Quick Links</h4><ul class="footer-links"><li><a href="schedule.html">Schedule</a></li><li><a href="instructors.html">Instructors</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="dashboard.html">Parent Dashboard</a></li></ul></div>
+      <div><h4 class="footer-col-title">Contact</h4><div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>14A Park Street, Kolkata 700 016</span></div><div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>+91 98300 12345</span></div><div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>hello@rhythmbloom.in</span></div></div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="container"><div class="footer-bottom"><p class="footer-copy">&copy; 2026 RhythmBloom Academy. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div></div></div>
+</footer>
+<div class="toast-container" aria-live="polite"></div>
+<script src="js/main.js"></script>
+<script>
+  function selectInquiry(el) {
+    document.querySelectorAll('.inquiry-type').forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+    const pn = document.getElementById('c-parent-name');
+    const em = document.getElementById('c-email');
+    const ph = document.getElementById('c-phone');
+    const ms = document.getElementById('c-message');
+    const co = document.getElementById('c-consent');
+    function setErr(el, errId, msg) {
+      el.classList.add('is-invalid');
+      const err = document.getElementById(errId);
+      if (err) { err.textContent = msg; err.style.display = 'block'; }
+    }
+    function clearErr(el, errId) {
+      el.classList.remove('is-invalid');
+      const err = document.getElementById(errId);
+      if (err) err.style.display = 'none';
+    }
+    if (!pn.value.trim()) { setErr(pn,'err-parent-name','Please enter your name.'); valid=false; } else clearErr(pn,'err-parent-name');
+    if (!em.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)) { setErr(em,'err-email','Please enter a valid email.'); valid=false; } else clearErr(em,'err-email');
+    if (!ph.value.trim()) { setErr(ph,'err-phone','Please enter your phone number.'); valid=false; } else clearErr(ph,'err-phone');
+    if (!ms.value.trim()) { setErr(ms,'err-message','Please enter your message.'); valid=false; } else clearErr(ms,'err-message');
+    if (!co.checked) { window.showToast?.('Please consent to being contacted.','error'); valid=false; }
+    if (valid) {
+      const btn = document.getElementById('contact-submit');
+      btn.innerHTML = '<span>Sending...</span>'; btn.disabled = true;
+      setTimeout(() => {
+        this.style.display = 'none';
+        document.getElementById('contact-success').style.display = 'block';
+        window.showToast?.('Message sent! We will reply within 1 business day.','success',5000);
+      }, 1500);
+    }
+  });
+</script>
+</body>
+</html>

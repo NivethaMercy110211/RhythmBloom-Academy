@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs — Classical, Western, Hip-Hop, Drama & Vocals | RhythmBloom Academy</title>
+  <meta name="description" content="Explore RhythmBloom Academy's performing arts programs for children — Bharatanatyam, Western dance, Hip-Hop, Drama, and Vocals with certified instructors." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/dark-theme.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="stylesheet" href="css/desktop.css" />
+  <link rel="stylesheet" href="css/tablet.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+  <style>
+    .page-hero {
+      padding: 100px 0 72px;
+      background: linear-gradient(135deg, var(--primary) 0%, #9B6BA0 100%);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content:''; position:absolute; top:-80px; right:-80px;
+      width:400px; height:400px; border-radius:50%;
+      background:rgba(255,255,255,0.06);
+    }
+    .page-hero::after {
+      content:''; position:absolute; bottom:-60px; left:-60px;
+      width:280px; height:280px; border-radius:50%;
+      background:rgba(255,255,255,0.04);
+    }
+    .page-hero-content { position:relative; z-index:1; }
+    .prog-section { padding-block: 88px; }
+    .prog-section:nth-child(even) { background: var(--bg-secondary); }
+    .prog-inner { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:stretch; }
+    .prog-inner.reverse { direction:rtl; }
+    .prog-inner.reverse > * { direction:ltr; }
+    .prog-img-wrap { position:relative; border-radius:var(--radius-xl); overflow:hidden; height:100%; width:100%; display:flex; }
+    .prog-img-wrap img { width:100%; height:100%; min-height:100%; object-fit:cover; display:block; transition:transform var(--trans-slow); }
+    .prog-img-wrap:hover img { transform:scale(1.04); }
+    .prog-img-badge {
+      position:absolute; top:20px; left:20px;
+      background:var(--primary); color:white;
+      padding:8px 18px; border-radius:var(--radius-pill);
+      font-size:var(--text-sm); font-weight:700; letter-spacing:0.03em;
+    }
+    .prog-content { }
+    .prog-meta-pills { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 24px; }
+    .prog-meta-pill {
+      display:flex; align-items:center; gap:6px;
+      background:var(--bg-card); border:1px solid var(--divider);
+      border-radius:var(--radius-pill); padding:7px 14px;
+      font-size:var(--text-sm); font-weight:500; color:var(--text-secondary);
+    }
+    .prog-meta-pill i { color:var(--primary); }
+    .prog-highlights { display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
+    .prog-highlight {
+      display:flex; align-items:flex-start; gap:12px;
+      font-size:0.9375rem; color:var(--text-secondary);
+    }
+    .prog-highlight i { color:var(--primary); margin-top:2px; flex-shrink:0; }
+    .prog-btns { display:flex; gap:12px; flex-wrap:wrap; }
+    .batch-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+    .batch-card {
+      background:var(--bg-card); border:1px solid var(--divider);
+      border-radius:var(--radius-md); padding:18px 16px;
+      box-shadow:var(--shadow-sm); transition:all var(--trans-fast);
+      display:flex; flex-direction:column; height:100%; min-width:0;
+    }
+    .batch-card:hover { border-color:var(--primary); box-shadow:var(--shadow-md); }
+    .batch-card-level { font-size:var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--primary); margin-bottom:6px; }
+    .batch-card-time { font-family:var(--font-heading); font-size:var(--text-md); font-weight:700; color:var(--text-primary); margin-bottom:8px; line-height:1.4; min-height:2.8em; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
+    .batch-card-info { font-size:var(--text-xs); color:var(--text-muted); margin-bottom:14px; line-height:1.6; min-height:3.2em; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
+    .batch-card > a { width:100%; justify-content:center; margin-top:auto; }
+    .program-anchor-nav { padding:18px var(--container-px); background:var(--bg-card); border-bottom:1px solid var(--divider); box-shadow:var(--shadow-sm); }
+    .program-anchor-nav-inner { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; max-width:var(--container-max); margin:0 auto; }
+    @media(max-width:900px){
+      .prog-inner { grid-template-columns:1fr; gap:32px; }
+      .prog-inner.reverse { direction:ltr; }
+      .prog-img-wrap img { height:280px; }
+      .batch-cards { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:576px){
+      .prog-section { padding-block:56px; }
+      .prog-meta-pills {
+        display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
+      }
+      .prog-meta-pill {
+        width:100%;
+        justify-content:flex-start;
+      }
+      .prog-highlights {
+        text-align:left !important;
+      }
+      .prog-highlight {
+        display:grid;
+        grid-template-columns:24px minmax(0, 1fr);
+        align-items:start;
+        gap:12px;
+        text-align:left;
+      }
+      .prog-highlight i {
+        width:24px;
+        margin-top:2px;
+        text-align:center;
+      }
+      .prog-highlight span {
+        min-width:0;
+        text-align:left;
+      }
+      .batch-cards { grid-template-columns:1fr; }
+      .prog-btns { flex-direction:column; }
+      .prog-btns a { justify-content:center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="rb-navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="rb-brand">
+      <div class="rb-logo-wrap">
+        <img src="images/logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-light" />
+        <img src="images/dark_logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-dark" style="display:none;" />
+      </div>
+      <div class="rb-brand-text">
+        <span class="rb-brand-name">RhythmBloom Academy</span>
+        <span class="rb-brand-tagline">Move. Perform. Shine.</span>
+      </div>
+    </a>
+    <nav class="rb-nav">
+      <ul class="rb-nav-list">
+        <li><a href="index.html" class="rb-nav-link">Home 1</a></li>
+        <li><a href="home-2.html" class="rb-nav-link">Home 2</a></li>
+        <li><a href="about.html" class="rb-nav-link">About</a></li>
+        <li><a href="programs.html" class="rb-nav-link active">Programs</a></li>
+        <li><a href="instructors.html" class="rb-nav-link">Instructors</a></li>
+        <li><a href="schedule.html" class="rb-nav-link">Schedule</a></li>
+        <li><a href="gallery.html" class="rb-nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="rb-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="rb-nav-right">
+      <button class="rb-icon-btn" data-theme-toggle aria-label="Toggle theme"><i class="bi bi-sun theme-icon-light"></i><i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i></button>
+      <button class="rb-icon-btn" data-dir-toggle aria-label="Toggle RTL"><span class="dir-label" style="font-size:.7rem;font-weight:700">RTL</span></button>
+      <a href="dashboard.html" class="btn-primary"><i class="bi bi-grid-1x2"></i> Parent Dashboard</a>
+      <a href="login.html" class="btn-secondary">Login</a>
+    </div>
+    <div class="rb-toggler">
+      <button class="rb-menu-toggle" aria-label="Open menu"><i class="bi bi-list"></i></button>
+    </div>
+  </div>
+</nav>
+<div class="rb-mobile-menu">
+  <ul class="rb-mobile-nav-list">
+    <li><a href="index.html" class="rb-mobile-nav-link">Home 1</a></li>
+    <li><a href="home-2.html" class="rb-mobile-nav-link">Home 2</a></li>
+    <li><a href="about.html" class="rb-mobile-nav-link">About</a></li>
+    <li><a href="programs.html" class="rb-mobile-nav-link active">Programs</a></li>
+    <li><a href="instructors.html" class="rb-mobile-nav-link">Instructors</a></li>
+    <li><a href="schedule.html" class="rb-mobile-nav-link">Schedule</a></li>
+    <li><a href="gallery.html" class="rb-mobile-nav-link">Gallery</a></li>
+    <li><a href="contact.html" class="rb-mobile-nav-link">Contact</a></li>
+  </ul>
+  <div class="rb-mobile-actions">
+    <a href="dashboard.html" class="btn-primary" style="width:100%;justify-content:center;"><i class="bi bi-grid-1x2"></i> Parent Dashboard</a>
+    <a href="login.html" class="btn-secondary" style="width:100%;justify-content:center;">Login</a>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:6px;">
+      <button class="rb-icon-btn" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
+        <i class="bi bi-sun theme-icon-light"></i>
+        <i class="bi bi-moon-stars theme-icon-dark" style="display:none"></i>
+      </button>
+      <button class="rb-icon-btn" data-dir-toggle title="Switch to RTL" aria-label="Switch to RTL">
+        <span class="dir-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="images/programs-hero.png" alt="Programs hero banner" /></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="page-hero-content text-center" style="color:white;">
+      <span style="display:inline-block;font-size:var(--text-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:14px;">What We Teach</span>
+      <h1 style="font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.25rem);font-weight:600;color:white;margin-bottom:16px;letter-spacing:-.02em;">Our Performing Arts Programs</h1>
+      <p style="font-size:1.0625rem;color:rgba(255,255,255,.82);max-width:580px;margin:0 auto 32px;line-height:1.7;">Five disciplines. All ages. Every level. Taught by expert instructors in a safe, professional studio environment designed for young performers.</p>
+    </div>
+  </div>
+</section>
+
+<nav class="program-anchor-nav" aria-label="Jump to a program">
+  <div class="program-anchor-nav-inner">
+    <a href="#classical" class="btn-secondary">Classical Dance</a>
+    <a href="#western" class="btn-secondary">Western Dance</a>
+    <a href="#hiphop" class="btn-secondary">Hip-Hop</a>
+    <a href="#drama" class="btn-secondary">Drama</a>
+    <a href="#vocals" class="btn-secondary">Vocals</a>
+  </div>
+</nav>
+
+<!-- CLASSICAL DANCE -->
+<section class="prog-section" id="classical" aria-labelledby="classical-heading">
+  <div class="container">
+    <div class="prog-inner">
+      <div class="prog-img-wrap reveal">
+        <img src="images/program-1.png" alt="Bharatanatyam classical dance performance" loading="lazy" />
+        <span class="prog-img-badge"><i class="bi bi-flower2"></i> Classical Dance</span>
+      </div>
+      <div class="prog-content reveal reveal-delay-2">
+        <span class="section-label" style="margin-bottom:12px;">Indian Classical Arts</span>
+        <h2 id="classical-heading" style="font-family:var(--font-heading);font-size:2rem;font-weight:600;margin-bottom:8px;letter-spacing:-.02em;">Classical Dance</h2>
+        <p style="font-size:var(--text-md);color:var(--primary);font-weight:600;margin-bottom:16px;">Bharatanatyam & Classical Indian Traditions</p>
+        <p style="color:var(--text-secondary);line-height:1.75;margin-bottom:0;">Rooted in centuries of tradition, our Classical Dance program offers authentic Bharatanatyam training and introduces students to the rich heritage of Indian classical arts. Students learn fundamental adavus, hastas (hand gestures), facial expressions (abhinaya), and rhythmic footwork (nattuvangam) in a disciplined yet joyful environment.</p>
+        <div class="prog-meta-pills">
+          <span class="prog-meta-pill"><i class="bi bi-person-fill"></i> Ages 5–16</span>
+          <span class="prog-meta-pill"><i class="bi bi-bar-chart-fill"></i> Beginner to Advanced</span>
+          <span class="prog-meta-pill"><i class="bi bi-clock-fill"></i> 60 min/class</span>
+          <span class="prog-meta-pill"><i class="bi bi-calendar3"></i> Sat & Sun batches</span>
+          <span class="prog-meta-pill"><i class="bi bi-people-fill"></i> Max 12 students</span>
+        </div>
+        <div class="prog-highlights">
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Authentic Kalakshetra-tradition curriculum taught by experienced gurus</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Annual Arangetram preparation for advanced students</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Performance opportunities at cultural events and academy recitals</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Theory of classical music rhythms (tala) integrated into curriculum</span></div>
+        </div>
+        <div class="prog-btns">
+          <a href="schedule.html?program=classical" class="btn-primary btn-lg"><i class="bi bi-calendar3"></i> View Batches</a>
+          <a href="dashboard.html" class="btn-secondary btn-lg"><i class="bi bi-person-plus"></i> Enroll Child</a>
+        </div>
+        <div class="batch-cards">
+          <div class="batch-card"><div class="batch-card-level">Beginner</div><div class="batch-card-time">Sat 10:00–11:00 AM</div><div class="batch-card-info">Ages 5–8 · Priya Sharma · <span style="color:var(--success)">8 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+          <div class="batch-card"><div class="batch-card-level">Intermediate</div><div class="batch-card-time">Sun 11:00 AM–12:15 PM</div><div class="batch-card-info">Ages 9–13 · Priya Sharma · <span style="color:var(--warning)">4 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+          <div class="batch-card"><div class="batch-card-level">Advanced</div><div class="batch-card-time">Sat 2:00–3:30 PM</div><div class="batch-card-info">Ages 12–16 · Priya Sharma · <span style="color:var(--error)">Waitlist</span></div><a href="contact.html" class="btn-secondary" style="font-size:var(--text-sm);padding:8px 14px;">Waitlist</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WESTERN DANCE -->
+<section class="prog-section" id="western" aria-labelledby="western-heading">
+  <div class="container">
+    <div class="prog-inner reverse">
+      <div class="prog-img-wrap reveal">
+        <img src="images/program-2.png" alt="Western contemporary dance performance" loading="lazy" />
+        <span class="prog-img-badge"><i class="bi bi-person-arms-up"></i> Western Dance</span>
+      </div>
+      <div class="prog-content reveal reveal-delay-2">
+        <span class="section-label" style="margin-bottom:12px;">Contemporary & Jazz Arts</span>
+        <h2 id="western-heading" style="font-family:var(--font-heading);font-size:2rem;font-weight:600;margin-bottom:8px;letter-spacing:-.02em;">Western Dance</h2>
+        <p style="font-size:var(--text-md);color:var(--primary);font-weight:600;margin-bottom:16px;">Contemporary, Jazz & Lyrical Styles</p>
+        <p style="color:var(--text-secondary);line-height:1.75;">Our Western Dance program fuses technical rigour with artistic freedom. Students explore the full range of contemporary movement, jazz technique, and lyrical expression — developing strength, flexibility, musicality, and a deeply personal performance voice.</p>
+        <div class="prog-meta-pills">
+          <span class="prog-meta-pill"><i class="bi bi-person-fill"></i> Ages 6–16</span>
+          <span class="prog-meta-pill"><i class="bi bi-bar-chart-fill"></i> All Levels</span>
+          <span class="prog-meta-pill"><i class="bi bi-clock-fill"></i> 60 min/class</span>
+          <span class="prog-meta-pill"><i class="bi bi-calendar3"></i> Mon/Wed/Fri batches</span>
+        </div>
+        <div class="prog-highlights">
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Foundation in ballet-based technique for proper body alignment</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Original group choreography created for each recital season</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Improvisation workshops to develop unique artistic expression</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Cross-training with drama for enhanced stage presence</span></div>
+        </div>
+        <div class="prog-btns">
+          <a href="schedule.html?program=western" class="btn-primary btn-lg"><i class="bi bi-calendar3"></i> View Batches</a>
+          <a href="dashboard.html" class="btn-secondary btn-lg"><i class="bi bi-person-plus"></i> Enroll Child</a>
+        </div>
+        <div class="batch-cards">
+          <div class="batch-card"><div class="batch-card-level">Beginner</div><div class="batch-card-time">Mon & Wed 4:00–5:00 PM</div><div class="batch-card-info">Ages 6–9 · Meera Kapoor · <span style="color:var(--success)">10 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+          <div class="batch-card"><div class="batch-card-level">Intermediate</div><div class="batch-card-time">Mon/Wed/Fri 4:30–5:30 PM</div><div class="batch-card-info">Ages 9–13 · Meera Kapoor · <span style="color:var(--warning)">3 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+          <div class="batch-card"><div class="batch-card-level">Advanced</div><div class="batch-card-time">Fri 5:30–7:00 PM</div><div class="batch-card-info">Ages 12–16 · Meera Kapoor · <span style="color:var(--success)">5 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIP-HOP -->
+<section class="prog-section" id="hiphop" aria-labelledby="hiphop-heading">
+  <div class="container">
+    <div class="prog-inner">
+      <div class="prog-img-wrap reveal">
+        <img src="images/program-3.png" alt="Hip-hop dance class for children" loading="lazy" />
+        <span class="prog-img-badge"><i class="bi bi-soundwave"></i> Hip-Hop</span>
+      </div>
+      <div class="prog-content reveal reveal-delay-2">
+        <span class="section-label" style="margin-bottom:12px;">Urban Movement Arts</span>
+        <h2 id="hiphop-heading" style="font-family:var(--font-heading);font-size:2rem;font-weight:600;margin-bottom:8px;letter-spacing:-.02em;">Hip-Hop Dance</h2>
+        <p style="font-size:var(--text-md);color:var(--primary);font-weight:600;margin-bottom:16px;">Rhythm, Breaking, Popping & Freestyle</p>
+        <p style="color:var(--text-secondary);line-height:1.75;">Energy, attitude, and artistry — our age-appropriate Hip-Hop program introduces children to the rich culture and technical vocabulary of urban dance. From foundational grooves and toprock to freezes and choreography, students develop rhythmic precision and boundless confidence.</p>
+        <div class="prog-meta-pills">
+          <span class="prog-meta-pill"><i class="bi bi-person-fill"></i> Ages 7–16</span>
+          <span class="prog-meta-pill"><i class="bi bi-bar-chart-fill"></i> Beginner & Intermediate</span>
+          <span class="prog-meta-pill"><i class="bi bi-clock-fill"></i> 60 min/class</span>
+          <span class="prog-meta-pill"><i class="bi bi-calendar3"></i> Tue & Thu batches</span>
+        </div>
+        <div class="prog-highlights">
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Age-appropriate curriculum — no adult hip-hop content</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Freestyle sessions encourage personal creative expression</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Battle-format workshops build confidence and sportsmanship</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Taught by a national-level competition champion instructor</span></div>
+        </div>
+        <div class="prog-btns">
+          <a href="schedule.html?program=hiphop" class="btn-primary btn-lg"><i class="bi bi-calendar3"></i> View Batches</a>
+          <a href="dashboard.html" class="btn-secondary btn-lg"><i class="bi bi-person-plus"></i> Enroll Child</a>
+        </div>
+        <div class="batch-cards">
+          <div class="batch-card"><div class="batch-card-level">Beginner</div><div class="batch-card-time">Tue & Thu 5:00–6:00 PM</div><div class="batch-card-info">Ages 7–10 · Rahul Singh · <span style="color:var(--success)">12 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+          <div class="batch-card"><div class="batch-card-level">Intermediate</div><div class="batch-card-time">Tue & Thu 6:00–7:00 PM</div><div class="batch-card-info">Ages 10–16 · Rahul Singh · <span style="color:var(--warning)">6 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+          <div class="batch-card"><div class="batch-card-level">Weekend</div><div class="batch-card-time">Sat 12:00–1:00 PM</div><div class="batch-card-info">Ages 7–14 · Rahul Singh · <span style="color:var(--success)">8 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRAMA -->
+<section class="prog-section" id="drama" aria-labelledby="drama-heading">
+  <div class="container">
+    <div class="prog-inner reverse">
+      <div class="prog-img-wrap reveal">
+        <img src="images/program-4.png" alt="Children drama and theatre class" loading="lazy" />
+        <span class="prog-img-badge"><i class="bi bi-masks-theater"></i> Drama</span>
+      </div>
+      <div class="prog-content reveal reveal-delay-2">
+        <span class="section-label" style="margin-bottom:12px;">Theatre Arts</span>
+        <h2 id="drama-heading" style="font-family:var(--font-heading);font-size:2rem;font-weight:600;margin-bottom:8px;letter-spacing:-.02em;">Drama & Theatre</h2>
+        <p style="font-size:var(--text-md);color:var(--primary);font-weight:600;margin-bottom:16px;">Acting, Storytelling & Stage Confidence</p>
+        <p style="color:var(--text-secondary);line-height:1.75;">Our Drama program goes beyond scripts and costumes — it builds the very foundation of confident communication. Students explore character building, emotional expression, improvisation, voice projection, and ensemble work through games, exercises, and full theatrical productions.</p>
+        <div class="prog-meta-pills">
+          <span class="prog-meta-pill"><i class="bi bi-person-fill"></i> Ages 6–16</span>
+          <span class="prog-meta-pill"><i class="bi bi-bar-chart-fill"></i> All Levels</span>
+          <span class="prog-meta-pill"><i class="bi bi-clock-fill"></i> 75 min/class</span>
+          <span class="prog-meta-pill"><i class="bi bi-calendar3"></i> Sat & weekday batches</span>
+        </div>
+        <div class="prog-highlights">
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Annual theatrical production — full script, costumes & set design</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Voice projection, diction, and public speaking skills embedded</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Proven to improve academic confidence and social skills</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Collaborative writing workshops for older students</span></div>
+        </div>
+        <div class="prog-btns">
+          <a href="schedule.html?program=drama" class="btn-primary btn-lg"><i class="bi bi-calendar3"></i> View Batches</a>
+          <a href="dashboard.html" class="btn-secondary btn-lg"><i class="bi bi-person-plus"></i> Enroll Child</a>
+        </div>
+        <div class="batch-cards">
+          <div class="batch-card"><div class="batch-card-level">Beginner</div><div class="batch-card-time">Sat 10:30 AM–11:45 AM</div><div class="batch-card-info">Ages 6–9 · Ananya Bose · <span style="color:var(--success)">7 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+          <div class="batch-card"><div class="batch-card-level">Intermediate</div><div class="batch-card-time">Sat 2:00–3:15 PM</div><div class="batch-card-info">Ages 9–13 · Ananya Bose · <span style="color:var(--error)">Full — Waitlist</span></div><a href="contact.html" class="btn-secondary" style="font-size:var(--text-sm);padding:8px 14px;">Waitlist</a></div>
+          <div class="batch-card"><div class="batch-card-level">Advanced</div><div class="batch-card-time">Wed 5:00–6:15 PM</div><div class="batch-card-info">Ages 12–16 · Ananya Bose · <span style="color:var(--success)">5 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOCALS -->
+<section class="prog-section" id="vocals" aria-labelledby="vocals-heading">
+  <div class="container">
+    <div class="prog-inner">
+      <div class="prog-img-wrap reveal">
+        <img src="images/program-5.png" alt="Child singing and vocal training" loading="lazy" />
+        <span class="prog-img-badge"><i class="bi bi-mic-fill"></i> Vocals</span>
+      </div>
+      <div class="prog-content reveal reveal-delay-2">
+        <span class="section-label" style="margin-bottom:12px;">Voice & Performance</span>
+        <h2 id="vocals-heading" style="font-family:var(--font-heading);font-size:2rem;font-weight:600;margin-bottom:8px;letter-spacing:-.02em;">Vocals & Voice</h2>
+        <p style="font-size:var(--text-md);color:var(--primary);font-weight:600;margin-bottom:16px;">Voice Training, Breath Control & Performance</p>
+        <p style="color:var(--text-secondary);line-height:1.75;">Every child has a voice — our Vocals program helps them find it, develop it, and share it with the world. From proper breathing technique and pitch training to performance anxiety management and stage presence, our certified vocal coaches create a nurturing space for every young singer to flourish.</p>
+        <div class="prog-meta-pills">
+          <span class="prog-meta-pill"><i class="bi bi-person-fill"></i> Ages 5–16</span>
+          <span class="prog-meta-pill"><i class="bi bi-bar-chart-fill"></i> All Levels</span>
+          <span class="prog-meta-pill"><i class="bi bi-clock-fill"></i> 45 min/class</span>
+          <span class="prog-meta-pill"><i class="bi bi-calendar3"></i> Flexible scheduling</span>
+        </div>
+        <div class="prog-highlights">
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Individual and group vocal training sessions available</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Breathing exercises, posture, and pitch accuracy training</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Performance at inter-academy showcases and community events</span></div>
+          <div class="prog-highlight"><i class="bi bi-check-circle-fill"></i><span>Music theory integrated into the curriculum for older students</span></div>
+        </div>
+        <div class="prog-btns">
+          <a href="schedule.html?program=vocals" class="btn-primary btn-lg"><i class="bi bi-calendar3"></i> View Batches</a>
+          <a href="dashboard.html" class="btn-secondary btn-lg"><i class="bi bi-person-plus"></i> Enroll Child</a>
+        </div>
+        <div class="batch-cards">
+          <div class="batch-card"><div class="batch-card-level">Beginner</div><div class="batch-card-time">Mon & Wed 4:00–4:45 PM</div><div class="batch-card-info">Ages 5–9 · Supriya Das · <span style="color:var(--success)">9 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+          <div class="batch-card"><div class="batch-card-level">Intermediate</div><div class="batch-card-time">Tue & Thu 4:30–5:15 PM</div><div class="batch-card-info">Ages 9–14 · Supriya Das · <span style="color:var(--success)">6 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+          <div class="batch-card"><div class="batch-card-level">Sat Group</div><div class="batch-card-time">Sat 1:00–1:45 PM</div><div class="batch-card-info">Ages 6–16 (mixed) · Supriya Das · <span style="color:var(--success)">11 seats left</span></div><a href="dashboard.html" class="btn-primary" style="font-size:var(--text-sm);padding:8px 14px;">Enroll</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg"><img src="images/programs-cta.png" alt="Stage performance" /></div>
+  <div class="container">
+    <div class="cta-content reveal">
+      <p class="cta-label">New Term Starting September 2026</p>
+      <h2 class="cta-title">Find the Program They'll Love</h2>
+      <p class="cta-desc">Not sure which program to choose? Our friendly advisors will help you find the perfect fit for your child's age, interests, and personality.</p>
+      <div class="cta-actions">
+        <a href="dashboard.html" class="btn-primary btn-xl"><i class="bi bi-person-plus-fill"></i> Enroll Now</a>
+        <a href="contact.html" class="btn-ghost btn-xl"><i class="bi bi-chat-text"></i> Talk to an Advisor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="rb-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="images/logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-light" />
+            <img src="images/dark_logo.png" alt="RhythmBloom Academy Logo" class="rb-logo-dark" style="display:none;" />
+          </div>
+          <div><div class="footer-brand-name">RhythmBloom Academy</div><div class="footer-brand-tagline">Move. Perform. Shine.</div></div>
+        </div>
+        <p class="footer-about">Kolkata's premier Kids Dance & Performing Arts Academy. Nurturing young performers since 2014.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="footer-social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <div><h4 class="footer-col-title">Programs</h4><ul class="footer-links"><li><a href="#classical">Classical Dance</a></li><li><a href="#western">Western Dance</a></li><li><a href="#hiphop">Hip-Hop</a></li><li><a href="#drama">Drama & Theatre</a></li><li><a href="#vocals">Vocals & Voice</a></li></ul></div>
+      <div><h4 class="footer-col-title">Quick Links</h4><ul class="footer-links"><li><a href="schedule.html">Schedule</a></li><li><a href="instructors.html">Instructors</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="dashboard.html">Parent Dashboard</a></li></ul></div>
+      <div><h4 class="footer-col-title">Contact</h4><div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>14A Park Street, Kolkata 700 016</span></div><div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>+91 98300 12345</span></div><div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>hello@rhythmbloom.in</span></div><h4 class="footer-col-title" style="margin-top:20px;">Hours</h4><div class="footer-contact-item"><i class="bi bi-clock-fill"></i><span>Mon–Fri: 3–8 PM | Sat–Sun: 9 AM–6 PM</span></div></div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="container"><div class="footer-bottom"><p class="footer-copy">&copy; 2026 RhythmBloom Academy. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div></div></div>
+</footer>
+<div class="toast-container" aria-live="polite"></div>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+/* =============================================
+   RHYTHMBLOOM ACADEMY — DARK THEME CSS
+   Dark mode overrides applied via [data-theme="dark"]
+   ============================================= */
+
+/* Main CSS Variables already define dark mode in :root overrides.
+   This file adds contextual component-level dark mode fixes. */
+
+[data-theme="dark"] body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* ── Navbar ── */
+[data-theme="dark"] .rb-navbar {
+  background: rgba(28, 24, 29, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="dark"] .rb-brand-name {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .rb-logo-wrap,
+[data-theme="dark"] .auth-logo-wrap,
+[data-theme="dark"] .footer-logo-wrap {
+  background: #1A151C;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .rb-logo-light {
+  display: none !important;
+}
+
+[data-theme="dark"] .rb-logo-dark {
+  display: block !important;
+}
+
+[data-theme="dark"] .rb-icon-btn {
+  background: var(--bg-card);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .rb-mobile-menu {
+  background: var(--bg-secondary);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Cards ── */
+[data-theme="dark"] .program-card,
+[data-theme="dark"] .level-card,
+[data-theme="dark"] .value-card,
+[data-theme="dark"] .instructor-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .schedule-card,
+[data-theme="dark"] .enrollment-panel,
+[data-theme="dark"] .profile-card,
+[data-theme="dark"] .overview-card,
+[data-theme="dark"] .att-stat-card,
+[data-theme="dark"] .att-calendar-wrap,
+[data-theme="dark"] .recital-event-card,
+[data-theme="dark"] .notif-item,
+[data-theme="dark"] .fee-details-card,
+[data-theme="dark"] .faq-item {
+  background: var(--bg-card);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+/* ── Section backgrounds ── */
+[data-theme="dark"] .bg-secondary,
+[data-theme="dark"] section.alt-bg {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* ── Forms ── */
+[data-theme="dark"] .form-control {
+  background: var(--bg-secondary);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] input[type="date"],
+[data-theme="dark"] input[type="time"],
+[data-theme="dark"] input[type="datetime-local"] {
+  color-scheme: dark !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme="dark"] input[type="time"]::-webkit-calendar-picker-indicator,
+[data-theme="dark"] input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1.35) !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .form-control:focus {
+  background: var(--bg-card);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(167, 123, 171, 0.15);
+}
+
+/* ── Schedule ── */
+[data-theme="dark"] .schedule-filters {
+  background: var(--bg-card);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="dark"] .schedule-filters select,
+[data-theme="dark"] .schedule-filters input {
+  background: var(--bg-secondary);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+/* ── Gallery ── */
+[data-theme="dark"] .gallery-filter-btn {
+  background: var(--bg-card);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+/* ── FAQ ── */
+[data-theme="dark"] .faq-question {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .faq-answer {
+  background: var(--bg-card);
+}
+
+[data-theme="dark"] .faq-item.open .faq-question {
+  background: var(--primary-subtle);
+  color: var(--primary);
+}
+
+/* ── Footer ── */
+[data-theme="dark"] .rb-footer {
+  background: #110E12;
+}
+
+/* ── Dashboard ── */
+[data-theme="dark"] .dashboard-sidebar {
+  background: var(--bg-card);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="dark"] .dashboard-sidebar-header {
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="dark"] .sidebar-nav-link:hover,
+[data-theme="dark"] .sidebar-nav-link.active {
+  background: rgba(167, 123, 171, 0.12);
+}
+
+[data-theme="dark"] .enrollment-steps-header {
+  background: var(--bg-secondary);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="dark"] .enrollment-step-tab {
+  background: var(--bg-secondary);
+  border-color: rgba(255, 255, 255, 0.07);
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] .enrollment-step-tab.active {
+  background: var(--bg-card);
+  color: var(--primary);
+}
+
+[data-theme="dark"] .program-selector-item {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .program-selector-item:hover,
+[data-theme="dark"] .program-selector-item.selected {
+  border-color: var(--primary);
+  background: rgba(167, 123, 171, 0.12);
+}
+
+[data-theme="dark"] .batch-item {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .batch-item:hover {
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .batch-item.selected {
+  border-color: var(--primary);
+  background: rgba(167, 123, 171, 0.12);
+}
+
+[data-theme="dark"] .fee-history-table th {
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="dark"] .fee-history-table td {
+  border-color: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .fee-history-table tr:hover td {
+  background: rgba(167, 123, 171, 0.08);
+}
+
+/* ── Modal ── */
+[data-theme="dark"] .modal-box {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer {
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+/* ── Auth ── */
+[data-theme="dark"] .auth-form-pane {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .auth-form .form-control {
+  background: var(--bg-card);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Recital section background in dark ── */
+[data-theme="dark"] .recital-content-pane {
+  background: var(--bg-card);
+}
+
+/* ── Theme toggle icon switch ── */
+.theme-icon-dark {
+  display: none;
+}
+
+.theme-icon-light {
+  display: inline;
+}
+
+[data-theme="dark"] .theme-icon-dark {
+  display: inline;
+}
+
+[data-theme="dark"] .theme-icon-light {
+  display: none;
+}
+
+/* ── Scrollbar dark ── */
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(167, 123, 171, 0.35);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ── Selection dark ── */
+[data-theme="dark"] ::selection {
+  background: rgba(167, 123, 171, 0.3);
+}
+
+/* ── Stats row dark ── */
+[data-theme="dark"] .stats-row {
+  background: linear-gradient(135deg, #4E2C53 0%, #633A68 100%);
+}
+
+/* ── Toast dark ── */
+[data-theme="dark"] .toast {
+  background: var(--bg-card);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Att calendar dark ── */
+[data-theme="dark"] .att-calendar-wrap {
+  background: var(--bg-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .att-calendar-title,
+[data-theme="dark"] .att-calendar-title span {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .att-cal-day-header {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .att-cal-day {
+  color: var(--text-primary) !important;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .att-cal-day.present {
+  background: rgba(45, 122, 90, 0.35) !important;
+  color: #6BE8B4 !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .att-cal-day.absent {
+  background: rgba(219, 76, 76, 0.3) !important;
+  color: #FF8F8F !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .att-cal-day.upcoming {
+  background: rgba(167, 123, 171, 0.25) !important;
+  color: #E8C9EB !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .att-cal-day.no-class {
+  background: rgba(255, 255, 255, 0.03) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .att-legend-dot.no-class {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ── Calendar icons dark theme visibility fix ── */
+[data-theme="dark"] [class*="bi-calendar"],
+[data-theme="dark"] .bi-calendar,
+[data-theme="dark"] .bi-calendar3,
+[data-theme="dark"] .bi-calendar-check,
+[data-theme="dark"] .bi-calendar-event,
+[data-theme="dark"] .bi-calendar-week,
+[data-theme="dark"] .bi-calendar2-check-fill,
+[data-theme="dark"] .bi-calendar-check-fill {
+  color: #E8C9EB !important;
+  opacity: 1 !important;
+}
+
+[data-theme="dark"] .schedule-meta-item {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .schedule-meta-item i,
+[data-theme="dark"] .prog-meta-pill i,
+[data-theme="dark"] .overview-card-icon i {
+  color: #E8C9EB !important;
+}

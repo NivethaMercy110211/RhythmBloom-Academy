@@ -1,0 +1,484 @@
+/* =============================================
+   RHYTHMBLOOM ACADEMY — HEADER CSS
+   Sticky navbar, brand, navigation, active
+   ============================================= */
+
+/* ── Navbar Wrapper ── */
+.rb-navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1050 !important;
+  height: var(--navbar-height);
+  background: rgba(255, 253, 252, 0.95);
+  backdrop-filter: blur(16px) saturate(1.6);
+  -webkit-backdrop-filter: blur(16px) saturate(1.6);
+  border-bottom: 1px solid var(--divider);
+  transition: background var(--trans-base), border-color var(--trans-base), box-shadow var(--trans-base);
+}
+
+[data-theme="dark"] .rb-navbar {
+  background: rgba(28, 24, 29, 0.92);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+
+.rb-navbar.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.rb-navbar .nav-inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 0;
+  padding-inline: var(--container-px);
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+/* ── Brand ── */
+.rb-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 24px;
+}
+
+.rb-brand:hover { text-decoration: none; }
+
+.rb-logo-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--divider);
+  padding: 2px;
+}
+
+.rb-logo-wrap img,
+.auth-logo-wrap img,
+.footer-logo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer-logo-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--divider);
+  padding: 2px;
+}
+
+.auth-logo-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--divider);
+  padding: 2px;
+}
+
+.rb-logo-wrap svg,
+.rb-logo-wrap i {
+  color: white;
+  font-size: 20px;
+}
+
+.rb-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1;
+}
+
+.rb-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  transition: color var(--trans-fast);
+}
+
+.rb-brand-tagline {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ── Center Nav ── */
+.rb-nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rb-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rb-nav-item {
+  position: relative;
+}
+
+.rb-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: color var(--trans-fast), background var(--trans-fast);
+  white-space: nowrap;
+  position: relative;
+}
+
+.rb-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: var(--radius-pill);
+  transition: transform var(--trans-base);
+}
+
+.rb-nav-link:hover {
+  color: var(--primary);
+  background: var(--primary-subtle);
+}
+
+.rb-nav-link:hover::after,
+.rb-nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.rb-nav-link.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ── Nav Right Controls ── */
+.rb-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+/* ── Icon Buttons (Theme / RTL) ── */
+.rb-icon-btn {
+  order: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--divider);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  flex-shrink: 0;
+}
+
+.rb-icon-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-subtle);
+}
+
+/* ── Primary Button ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background: var(--primary);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--trans-fast), transform var(--trans-fast), box-shadow var(--trans-fast);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99,58,104,0.35);
+  text-decoration: none;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ── Secondary Button ── */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 17px;
+  background: transparent;
+  color: var(--primary);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(99,58,104,0.4);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--trans-fast);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-subtle);
+  border-color: var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+[data-theme="dark"] .btn-secondary {
+  border-color: rgba(167,123,171,0.5);
+  color: var(--primary);
+}
+
+/* ── Large Buttons ── */
+.btn-lg {
+  padding: 14px 32px;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+}
+
+.btn-xl {
+  padding: 16px 40px;
+  font-size: 1.0625rem;
+  border-radius: var(--radius-md);
+}
+
+/* ── Ghost Button ── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 24px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(255,255,255,0.85);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--trans-fast);
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.22);
+  border-color: #FFFFFF;
+  color: white;
+  text-decoration: none;
+}
+
+/* ── Mobile Toggle ── */
+.rb-toggler {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.rb-menu-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--divider);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all var(--trans-fast);
+}
+
+.rb-menu-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ── Mobile Menu Drawer ── */
+.rb-mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--divider);
+  box-shadow: var(--shadow-lg);
+  z-index: 1040;
+  overflow-y: auto;
+  max-height: calc(100vh - var(--navbar-height));
+  transform: translateY(-8px);
+  opacity: 0;
+  transition: transform var(--trans-base), opacity var(--trans-base);
+}
+
+.rb-mobile-menu.open {
+  display: block;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.rb-mobile-nav-list {
+  list-style: none;
+  padding: 16px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rb-mobile-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--trans-fast);
+}
+
+.rb-mobile-nav-link i {
+  display: none !important;
+}
+
+.rb-mobile-nav-link:hover,
+.rb-mobile-nav-link.active {
+  color: var(--primary);
+  background: var(--primary-subtle);
+}
+
+.rb-mobile-nav-link.active {
+  font-weight: 600;
+}
+
+.rb-mobile-actions {
+  padding: 12px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rb-mobile-actions .btn-primary,
+.rb-mobile-actions .btn-secondary {
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+}
+
+/* ── Dropdown (if needed) ── */
+.rb-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--bg-surface);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  padding: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--trans-base), transform var(--trans-base);
+  z-index: 100;
+}
+
+.rb-nav-item:hover .rb-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Desktop — show nav, hide toggler ── */
+@media (min-width: 1025px) {
+  .rb-toggler { display: none; }
+  .rb-nav { display: flex; }
+  .rb-mobile-menu { display: none !important; }
+}
+
+@media (max-width: 1024px) {
+  .rb-nav { display: none !important; }
+  .rb-nav-right { display: none !important; }
+  .rb-toggler {
+    display: flex !important;
+    margin-left: auto !important;
+  }
+  .rb-navbar .nav-inner {
+    padding-inline: var(--container-px);
+  }
+}
+
+@media (max-width: 576px) {
+  .rb-brand-tagline { display: none; }
+}

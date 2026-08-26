@@ -1,0 +1,33 @@
+/* =============================================
+   RHYTHMBLOOM ACADEMY — DESKTOP CSS (1440px+)
+   Large screen enhancements & spacing
+   ============================================= */
+
+@media (min-width: 1440px) {
+  :root {
+    --container-px: 48px;
+  }
+
+  .hero-title { font-size: 4.25rem; }
+  .hero-stats { gap: 56px; }
+  .programs-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .values-grid { grid-template-columns: repeat(4, 1fr); }
+  .instructors-grid { grid-template-columns: repeat(4, 1fr); gap: 28px; }
+  .instructors-grid.home-instructors-grid { grid-template-columns: repeat(3, 1fr); }
+  .testimonials-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .gallery-grid { grid-template-columns: repeat(5, 1fr); }
+  .footer-grid { gap: 56px; }
+  .overview-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .section { padding-block: 112px; }
+  .cta-section { padding-block: 120px; }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --section-py: 120px;
+  }
+
+  .hero { min-height: 100vh; }
+  .hero-title { font-size: 4.75rem; }
+}

@@ -1,0 +1,275 @@
+/* =============================================
+   RHYTHMBLOOM ACADEMY — RTL CSS
+   Right-to-left layout direction rules
+   ============================================= */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ── Navbar RTL ── */
+[dir="rtl"] .rb-brand {
+  margin-right: 0;
+  margin-left: 24px;
+}
+
+[dir="rtl"] .rb-nav-right {
+  margin-left: 0;
+  margin-right: 16px;
+}
+
+[dir="rtl"] .rb-nav-link::after {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%) scaleX(0);
+}
+
+[dir="rtl"] .rb-nav-link:hover::after,
+[dir="rtl"] .rb-nav-link.active::after {
+  transform: translateX(50%) scaleX(1);
+}
+
+[dir="rtl"] .rb-toggler {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .rb-brand {
+  order: -1;
+}
+
+/* ── Section Label RTL ── */
+[dir="rtl"] .section-label::before,
+[dir="rtl"] .section-label::after {
+  /* Keep decorative lines symmetrical */
+}
+
+/* ── Cards RTL ── */
+[dir="rtl"] .program-meta-item,
+[dir="rtl"] .schedule-meta-item,
+[dir="rtl"] .profile-info-row,
+[dir="rtl"] .att-legend-item,
+[dir="rtl"] .notif-item,
+[dir="rtl"] .recital-event,
+[dir="rtl"] .instructor-exp,
+[dir="rtl"] .footer-contact-item {
+  flex-direction: row-reverse;
+}
+
+/* ── Program Card ── */
+[dir="rtl"] .program-card-img .program-tag {
+  left: auto;
+  right: 14px;
+}
+
+[dir="rtl"] .program-card-footer {
+  flex-direction: row-reverse;
+}
+
+/* ── Schedule card color bar ── */
+[dir="rtl"] .schedule-color {
+  /* mirror the left accent bar */
+  order: 1;
+}
+
+[dir="rtl"] .schedule-info {
+  order: 0;
+}
+
+/* ── Sidebar RTL ── */
+[dir="rtl"] .dashboard-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--divider);
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .sidebar-nav-link {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .sidebar-nav-link.active::before {
+  left: auto;
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+
+[dir="rtl"] .sidebar-badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .dashboard-mobile-toggle {
+  left: auto;
+  right: 24px;
+}
+
+/* ── Auth page RTL ── */
+[dir="rtl"] .auth-page {
+  direction: rtl;
+}
+
+[dir="rtl"] .auth-controls {
+  right: auto;
+  left: 24px;
+}
+
+[dir="rtl"] .auth-back-link {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .auth-options-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .auth-input-wrap .auth-input-icon {
+  left: auto;
+  right: 13px;
+}
+
+[dir="rtl"] .auth-input-wrap .form-control {
+  padding-left: 16px;
+  padding-right: 40px;
+}
+
+[dir="rtl"] .auth-input-toggle {
+  right: auto;
+  left: 13px;
+}
+
+/* ── Journey steps RTL ── */
+[dir="rtl"] .journey-steps::before {
+  left: auto;
+  right: 40px;
+}
+
+[dir="rtl"] .journey-step {
+  flex-direction: row-reverse;
+}
+
+/* ── Recital timeline RTL ── */
+[dir="rtl"] .recital-timeline::before {
+  left: auto;
+  right: 20px;
+}
+
+[dir="rtl"] .recital-event {
+  flex-direction: row-reverse;
+}
+
+/* ── Testimonial Author RTL ── */
+[dir="rtl"] .testimonial-author {
+  flex-direction: row-reverse;
+}
+
+/* ── Fee card ── */
+[dir="rtl"] .fee-overview {
+  direction: rtl;
+}
+
+/* ── Footer RTL ── */
+[dir="rtl"] .footer-grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-social {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-bottom {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-bottom-links {
+  flex-direction: row-reverse;
+}
+
+/* ── Gallery RTL ── */
+[dir="rtl"] .gallery-filters {
+  flex-direction: row-reverse;
+}
+
+/* ── Lightbox RTL ── */
+[dir="rtl"] .lightbox-prev {
+  left: auto;
+  right: -60px;
+}
+
+[dir="rtl"] .lightbox-next {
+  right: auto;
+  left: -60px;
+}
+
+[dir="rtl"] .lightbox-close {
+  right: auto;
+  left: 24px;
+}
+
+/* ── Notification dot RTL ── */
+[dir="rtl"] .notif-dot {
+  right: auto;
+  left: 16px;
+}
+
+[dir="rtl"] .notif-item.unread {
+  border-left: none;
+  border-right: 3px solid var(--primary);
+}
+
+/* ── Overview card RTL ── */
+[dir="rtl"] .overview-card {
+  text-align: right;
+}
+
+/* ── Badge RTL ── */
+[dir="rtl"] .badge,
+[dir="rtl"] .tag {
+  direction: rtl;
+}
+
+/* ── Hero RTL ── */
+[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-actions {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-stats {
+  flex-direction: row-reverse;
+}
+
+/* ── RTL icon rotation for directional icons ── */
+[dir="rtl"] .rb-icon-btn .bi-arrow-left,
+[dir="rtl"] .sidebar-nav-link .bi-chevron-right,
+[dir="rtl"] .auth-back-link i {
+  transform: scaleX(-1);
+}
+
+/* ── Schedule meta RTL ── */
+[dir="rtl"] .schedule-meta-row {
+  flex-direction: row-reverse;
+}
+
+/* ── Form labels RTL ── */
+[dir="rtl"] .form-label { text-align: right; }
+
+/* ── Enrollment steps RTL ── */
+[dir="rtl"] .enrollment-step-tab {
+  flex-direction: row-reverse;
+}
+
+/* ── Mobile sidebar overlay RTL ── */
+@media (max-width: 900px) {
+  [dir="rtl"] .dashboard-sidebar {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  [dir="rtl"] .dashboard-sidebar.open {
+    transform: translateX(0);
+  }
+}
