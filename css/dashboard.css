@@ -3,6 +3,17 @@
    App-style interface, sidebar, calendar, fees
    ============================================= */
 
+/* ── Hide Scroll Top Button on Dashboard ── */
+#back-to-top,
+.back-to-top-btn,
+.dashboard-page #back-to-top,
+.dashboard-page .back-to-top-btn {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 /* ── Dashboard Layout ── */
 .dashboard-wrapper {
   display: flex;
@@ -1281,9 +1292,16 @@
   box-shadow: 0 4px 14px rgba(25, 12, 28, 0.2);
 }
 
+#tab-recitals {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
 #tab-recitals>.recital-event {
   padding: 28px;
   min-height: 210px;
+  margin-bottom: 28px;
   border: 1px solid rgba(99, 58, 104, 0.35);
   border-radius: var(--radius-xl);
   background:
@@ -2106,6 +2124,29 @@
 }
 
 @media (max-width: 576px) {
+  .payment-history-scroll {
+    width: 100%;
+    overscroll-behavior-inline: contain;
+    scrollbar-gutter: stable;
+  }
+
+  .payment-history-table {
+    width: calc(100vw + 226px) !important;
+    min-width: calc(100vw + 226px) !important;
+    table-layout: fixed;
+  }
+
+  .payment-history-table th:nth-child(1) { width: calc((100vw - 95px) * 0.30); }
+  .payment-history-table th:nth-child(2) { width: calc((100vw - 95px) * 0.42); }
+  .payment-history-table th:nth-child(3) { width: calc((100vw - 95px) * 0.28); }
+  .payment-history-table th:nth-child(4) { width: 90px; }
+  .payment-history-table th:nth-child(5) { width: 90px; }
+  .payment-history-table th:nth-child(6) { width: 120px; }
+
+  #tab-recitals .recital-timeline-card {
+    margin-top: 24px;
+  }
+
   .dashboard-topbar-actions {
     position: relative !important;
   }

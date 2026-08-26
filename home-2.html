@@ -188,6 +188,11 @@
       .h2-art-card { padding: 14px 8px; }
       .h2-art-icon { font-size: 1.5rem; }
       .community-grid { grid-template-columns: 1fr !important; }
+      .community-grid> :nth-child(3):last-child {
+        width: 100% !important;
+        max-width: none !important;
+        justify-self: stretch !important;
+      }
       .split-content { padding: 28px var(--container-px); }
     }
     @media (prefers-reduced-motion: reduce) {

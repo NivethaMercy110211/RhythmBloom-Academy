@@ -19,8 +19,8 @@
   .footer-grid { gap: 56px; }
   .overview-grid { grid-template-columns: repeat(4, 1fr); }
 
-  .section { padding-block: 112px; }
-  .cta-section { padding-block: 120px; }
+  .section { padding-block: 120px; }
+  .cta-section { padding-block: 128px; }
 }
 
 @media (min-width: 1600px) {

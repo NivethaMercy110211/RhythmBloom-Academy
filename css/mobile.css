@@ -24,7 +24,7 @@ img, iframe, video, object, embed {
 @media (max-width: 576px) {
   :root {
     --container-px: 16px;
-    --section-py: 56px;
+    --section-py: 64px;
     --navbar-height: 60px;
   }
 
@@ -36,7 +36,8 @@ img, iframe, video, object, embed {
   .section-header {
     text-align: center !important;
     margin-inline: auto !important;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
+    padding-top: 12px;
   }
   .section-header .section-desc,
   .section-desc {
@@ -248,7 +249,6 @@ img, iframe, video, object, embed {
   }
 
   .why-matter-content .section-desc,
-  .why-benefits-grid,
   .about-split p,
   .about-split .story-highlights,
   .about-split div[style*="display:flex"],
@@ -269,7 +269,30 @@ img, iframe, video, object, embed {
     text-align: center !important;
   }
 
-  .why-benefits-grid { grid-template-columns: 1fr !important; gap: 12px; }
+  .why-benefits-grid {
+    order: 3 !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+    text-align: start !important;
+  }
+  .why-benefit-card,
+  .why-benefits-grid > div {
+    text-align: start !important;
+  }
+  .why-benefit-card-header,
+  .why-benefits-grid > div > div[style*="display:flex"],
+  .why-benefits-grid > div > div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: start !important;
+  }
+  .why-benefit-card p,
+  .why-benefits-grid > div p {
+    text-align: start !important;
+  }
+
   .values-grid { grid-template-columns: 1fr !important; gap: 12px; }
   .value-card { padding: 20px 14px; }
   .value-icon { width: 48px; height: 48px; font-size: 20px; margin-bottom: 12px; }

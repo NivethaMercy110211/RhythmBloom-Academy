@@ -502,6 +502,27 @@
   align-self: start;
 }
 
+.why-benefit-card {
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-md);
+  text-align: start;
+}
+
+.why-benefit-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+.why-benefit-card p {
+  text-align: start;
+}
+
 /* ══════════════════════════════════════
    VALUE / BENEFIT CARDS (Why Performing Arts)
    ══════════════════════════════════════ */

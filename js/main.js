@@ -237,7 +237,7 @@
     };
 
     /* ── Floating Back to Top Arrow ── */
-    if (document.body.classList.contains('auth-page')) return;
+    if (document.body.classList.contains('auth-page') || document.body.classList.contains('dashboard-page')) return;
 
     let backToTopBtn = document.getElementById('back-to-top');
     if (!backToTopBtn) {

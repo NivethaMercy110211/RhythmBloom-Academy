@@ -87,7 +87,7 @@
 @media (max-width: 1199px) {
   :root {
     --container-px: 28px;
-    --section-py: 80px;
+    --section-py: 88px;
     --navbar-height: 68px;
   }
 
@@ -246,7 +246,8 @@
   }
 
   .section-header {
-    margin-bottom: 40px;
+    margin-bottom: 44px;
+    padding-top: 10px;
   }
 
   .cta-section {

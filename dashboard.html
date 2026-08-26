@@ -594,8 +594,8 @@
             style="background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:24px;">
             <h3 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:600; margin-bottom:16px;">Payment
               History & Invoices</h3>
-            <div style="overflow-x:auto;">
-              <table class="table" style="width:100%; font-size:var(--text-sm);">
+            <div class="payment-history-scroll" style="overflow-x:auto;">
+              <table class="table payment-history-table" style="width:100%; font-size:var(--text-sm);">
                 <thead>
                   <tr style="border-bottom:1px solid var(--divider); color:var(--text-muted); text-align:left;">
                     <th style="padding:12px;">Invoice ID</th>
@@ -655,7 +655,7 @@
         </div>
 
         <!-- Recital Timeline / Tasks -->
-        <div
+        <div class="recital-timeline-card"
           style="background:var(--bg-card); border:1px solid var(--divider); border-radius:var(--radius-xl); padding:28px;">
           <h3 style="font-family:var(--font-heading); font-size:1.25rem; font-weight:600; margin-bottom:20px;">Recital
             Preparation Timeline</h3>
