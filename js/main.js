@@ -173,7 +173,9 @@
     /* ── Smooth Scroll ── */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (href.startsWith('#tab-') || document.body.classList.contains('dashboard-page')) return;
+        const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
           const offset = (parseInt(getComputedStyle(document.documentElement)
