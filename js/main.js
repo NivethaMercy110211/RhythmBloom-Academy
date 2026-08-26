@@ -237,6 +237,8 @@
     };
 
     /* ── Floating Back to Top Arrow ── */
+    if (document.body.classList.contains('auth-page')) return;
+
     let backToTopBtn = document.getElementById('back-to-top');
     if (!backToTopBtn) {
       backToTopBtn = document.createElement('button');

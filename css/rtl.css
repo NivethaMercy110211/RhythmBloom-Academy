@@ -31,12 +31,48 @@
 }
 
 [dir="rtl"] .rb-toggler {
-  margin-left: 0;
-  margin-right: auto;
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
 
-[dir="rtl"] .rb-brand {
-  order: -1;
+@media (max-width: 1024px) {
+  html[dir="rtl"] .rb-navbar .nav-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    direction: rtl !important;
+  }
+
+  html[dir="rtl"] .rb-brand {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+  }
+
+  html[dir="rtl"] .rb-toggler {
+    display: flex !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  html[dir="rtl"] .rb-menu-toggle {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  html[dir="rtl"] .rb-mobile-menu {
+    direction: rtl !important;
+    text-align: right !important;
+  }
+
+  html[dir="rtl"] .rb-mobile-nav-list {
+    text-align: right !important;
+  }
+
+  html[dir="rtl"] .rb-mobile-nav-link {
+    text-align: right !important;
+    justify-content: flex-start !important;
+  }
 }
 
 /* ── Section Label RTL ── */
@@ -52,8 +88,7 @@
 [dir="rtl"] .att-legend-item,
 [dir="rtl"] .notif-item,
 [dir="rtl"] .recital-event,
-[dir="rtl"] .instructor-exp,
-[dir="rtl"] .footer-contact-item {
+[dir="rtl"] .instructor-exp {
   flex-direction: row-reverse;
 }
 
@@ -110,9 +145,14 @@
   direction: rtl;
 }
 
-[dir="rtl"] .auth-controls {
-  right: auto;
-  left: 24px;
+html[dir="rtl"] .auth-controls {
+  right: auto !important;
+  left: 24px !important;
+}
+
+html[dir="rtl"] .auth-visual-pane,
+html[dir="rtl"] .auth-visual-content {
+  text-align: right !important;
 }
 
 [dir="rtl"] .auth-back-link {
@@ -123,29 +163,59 @@
   flex-direction: row-reverse;
 }
 
-[dir="rtl"] .auth-input-wrap .auth-input-icon {
-  left: auto;
-  right: 13px;
+html[dir="rtl"] .auth-label {
+  text-align: right !important;
 }
 
-[dir="rtl"] .auth-input-wrap .form-control {
-  padding-left: 16px;
-  padding-right: 40px;
+html[dir="rtl"] .auth-input-wrap .auth-input-icon {
+  left: auto !important;
+  right: 14px !important;
 }
 
-[dir="rtl"] .auth-input-toggle {
-  right: auto;
-  left: 13px;
+html[dir="rtl"] .auth-input-toggle {
+  right: auto !important;
+  left: 14px !important;
 }
 
-/* ── Journey steps RTL ── */
-[dir="rtl"] .journey-steps::before {
-  left: auto;
-  right: 40px;
+html[dir="rtl"] .auth-input-wrap .auth-input,
+html[dir="rtl"] .auth-input-wrap .form-control {
+  padding-right: 42px !important;
+  padding-left: 16px !important;
+  text-align: right !important;
+  direction: rtl !important;
 }
 
-[dir="rtl"] .journey-step {
-  flex-direction: row-reverse;
+html[dir="rtl"] .auth-input-wrap .auth-input[type="password"],
+html[dir="rtl"] .auth-input-wrap .form-control[type="password"],
+html[dir="rtl"] .auth-input-wrap:has(.auth-input-toggle) .auth-input,
+html[dir="rtl"] .auth-input-wrap:has(.auth-input-toggle) .form-control {
+  padding-right: 42px !important;
+  padding-left: 42px !important;
+}
+
+/* ── Journey steps RTL (Home 2 Step by Step) ── */
+html[dir="rtl"] .journey-steps::before {
+  left: auto !important;
+  right: 40px !important;
+}
+
+html[dir="rtl"] .journey-step {
+  flex-direction: row !important;
+}
+
+html[dir="rtl"] .journey-step-content {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .journey-step:hover .journey-step-content {
+  transform: translateX(-6px) !important;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .journey-steps::before {
+    left: auto !important;
+    right: 28px !important;
+  }
 }
 
 /* ── Recital timeline RTL ── */
@@ -169,20 +239,74 @@
 }
 
 /* ── Footer RTL ── */
-[dir="rtl"] .footer-grid {
-  direction: rtl;
+html[dir="rtl"] .rb-footer {
+  direction: rtl !important;
+  text-align: right !important;
 }
 
-[dir="rtl"] .footer-social {
-  flex-direction: row-reverse;
+html[dir="rtl"] .footer-grid {
+  direction: rtl !important;
+  text-align: right !important;
 }
 
-[dir="rtl"] .footer-bottom {
-  flex-direction: row-reverse;
+html[dir="rtl"] .footer-brand {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-align: right !important;
 }
 
-[dir="rtl"] .footer-bottom-links {
-  flex-direction: row-reverse;
+html[dir="rtl"] .footer-about,
+html[dir="rtl"] .footer-col-title,
+html[dir="rtl"] .footer-links,
+html[dir="rtl"] .footer-links li,
+html[dir="rtl"] .footer-links a,
+html[dir="rtl"] .footer-copy {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .footer-social {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+}
+
+html[dir="rtl"] .footer-contact-item {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  align-items: flex-start !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] .footer-bottom {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] .footer-bottom-links {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px !important;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+
+  html[dir="rtl"] .footer-copy,
+  html[dir="rtl"] .footer-bottom-links {
+    text-align: center !important;
+    justify-content: center !important;
+  }
 }
 
 /* ── Gallery RTL ── */
@@ -228,17 +352,32 @@
   direction: rtl;
 }
 
-/* ── Hero RTL ── */
-[dir="rtl"] .hero-content {
-  text-align: right;
+/* ── Hero RTL (Home 1 Banner) ── */
+html[dir="rtl"] .hero .hero-content {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+  text-align: right !important;
 }
 
-[dir="rtl"] .hero-actions {
-  flex-direction: row-reverse;
+html[dir="rtl"] .hero .hero-title,
+html[dir="rtl"] .hero .hero-desc {
+  text-align: right !important;
 }
 
-[dir="rtl"] .hero-stats {
-  flex-direction: row-reverse;
+html[dir="rtl"] .hero .hero-badge {
+  margin-right: 0 !important;
+  margin-left: auto !important;
+  flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] .hero .hero-actions {
+  flex-direction: row-reverse !important;
+  justify-content: flex-start !important;
+}
+
+html[dir="rtl"] .hero .hero-stats {
+  flex-direction: row-reverse !important;
+  justify-content: flex-start !important;
 }
 
 /* ── RTL icon rotation for directional icons ── */
@@ -254,15 +393,17 @@
 }
 
 /* ── Form labels RTL ── */
-[dir="rtl"] .form-label { text-align: right; }
+[dir="rtl"] .form-label {
+  text-align: right;
+}
 
 /* ── Enrollment steps RTL ── */
 [dir="rtl"] .enrollment-step-tab {
   flex-direction: row-reverse;
 }
 
-/* ── Mobile sidebar overlay RTL ── */
-@media (max-width: 900px) {
+/* ── Responsive sidebar overlay RTL ── */
+@media (max-width: 1366px) {
   [dir="rtl"] .dashboard-sidebar {
     left: auto;
     right: 0;
@@ -271,5 +412,157 @@
 
   [dir="rtl"] .dashboard-sidebar.open {
     transform: translateX(0);
+  }
+}
+
+/* ── Programs Page RTL ── */
+html[dir="rtl"] .prog-img-badge {
+  left: auto !important;
+  right: 20px !important;
+}
+
+html[dir="rtl"] .prog-content,
+html[dir="rtl"] .batch-card {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .batch-card-level,
+html[dir="rtl"] .batch-card-time,
+html[dir="rtl"] .batch-card-info {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .prog-meta-pill {
+  flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] .prog-highlight {
+  flex-direction: row-reverse !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] .prog-highlight span {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .prog-btns {
+  flex-direction: row-reverse !important;
+}
+
+/* Mirror the compact dashboard header controls in RTL mode. */
+@media (max-width: 1366px) {
+  html[dir="rtl"] .dashboard-mobile-nav-group {
+    direction: rtl;
+    flex-direction: row !important;
+  }
+
+  html[dir="rtl"] .dashboard-mobile-brand {
+    direction: rtl;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    text-align: right;
+  }
+
+  html[dir="rtl"] .dashboard-mobile-utility-controls {
+    direction: rtl;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  html[dir="rtl"] .dashboard-mobile-nav-group .dashboard-mobile-toggle {
+    margin-left: 0 !important;
+    margin-right: 10px !important;
+  }
+
+  html[dir="rtl"] .sidebar-close-btn {
+    right: auto;
+    left: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  html[dir="rtl"] .prog-meta-pill {
+    justify-content: flex-end !important;
+  }
+
+  html[dir="rtl"] .prog-highlight {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: right !important;
+  }
+}
+}
+
+html[dir="rtl"] .dashboard-main {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+}
+
+@media (min-width: 1367px) {
+  html[dir="rtl"] .dashboard-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    transform: none !important;
+    border-left: 1px solid var(--divider) !important;
+    border-right: none !important;
+  }
+
+  html[dir="rtl"] .dashboard-main {
+    margin-right: 280px !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* ── Programs Page RTL ── */
+html[dir="rtl"] .prog-img-badge {
+  left: auto !important;
+  right: 20px !important;
+}
+
+html[dir="rtl"] .prog-content,
+html[dir="rtl"] .batch-card {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .batch-card-level,
+html[dir="rtl"] .batch-card-time,
+html[dir="rtl"] .batch-card-info {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .prog-meta-pill {
+  flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] .prog-highlight {
+  flex-direction: row-reverse !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] .prog-highlight span {
+  text-align: right !important;
+}
+
+html[dir="rtl"] .prog-btns {
+  flex-direction: row-reverse !important;
+}
+
+@media (max-width: 576px) {
+  html[dir="rtl"] .prog-meta-pill {
+    justify-content: flex-end !important;
+  }
+
+  html[dir="rtl"] .prog-highlight {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: right !important;
   }
 }

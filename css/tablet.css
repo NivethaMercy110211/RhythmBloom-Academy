@@ -1,8 +1,7 @@
 /* ════════════════════════════════════════════════════════════════
    HOME 1 & HOME 2 HERO/BANNER RULES FOR IPAD PRO (1024px - 1366px)
    - Reduced banner height
-   - Removed excess top space/padding above banner content
-   - Left-aligned banner buttons (NOT centered)
+   - Centered logo and content
    ════════════════════════════════════════════════════════════════ */
 @media (min-width: 901px) and (max-width: 1366px) {
   /* Home 1 Banner */
@@ -15,16 +14,21 @@
     padding-block: 36px 40px !important;
     padding-top: 28px !important;
     max-width: 700px !important;
-    text-align: left !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  .hero-badge {
+    margin-inline: auto !important;
   }
 
   .hero-actions {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     gap: 16px !important;
-    margin-inline: 0 !important;
+    margin-inline: auto !important;
     width: auto !important;
   }
 
@@ -38,8 +42,9 @@
   }
 
   .hero-stats {
-    justify-content: flex-start !important;
+    justify-content: center !important;
     margin-top: 28px !important;
+    margin-inline: auto !important;
   }
 
   /* Home 2 Banner */

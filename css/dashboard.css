@@ -55,6 +55,10 @@
   white-space: nowrap;
 }
 
+.sidebar-close-btn {
+  display: none;
+}
+
 .sidebar-nav-section {
   padding: 16px 12px;
 }
@@ -815,7 +819,7 @@
   display: block;
 }
 
-.enrollment-step-content > .d-flex.mt-4,
+.enrollment-step-content>.d-flex.mt-4,
 .enrollment-step-content .justify-content-between,
 .wizard-actions-row {
   display: flex !important;
@@ -846,8 +850,8 @@
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .program-selector-grid > :nth-child(5):last-child,
-  .program-selector-grid > :last-child:nth-child(odd) {
+  .program-selector-grid> :nth-child(5):last-child,
+  .program-selector-grid> :last-child:nth-child(odd) {
     grid-column: 1 / span 2 !important;
     max-width: calc((100% - 14px) / 2) !important;
     margin-inline: auto !important;
@@ -1810,9 +1814,39 @@
     top: 0;
     left: 0;
     bottom: 0;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
     z-index: 500;
     transform: translateX(-100%);
     transition: transform var(--trans-base);
+  }
+
+  /* The responsive sidebar is a navigation drawer; branding remains in the top bar. */
+  .dashboard-sidebar .sidebar-header {
+    display: none;
+  }
+
+  .dashboard-sidebar .sidebar-nav-section {
+    padding-top: 68px;
+  }
+
+  .sidebar-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 1;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--divider);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
   }
 
   .dashboard-sidebar.open {
@@ -2075,10 +2109,12 @@
   .dashboard-topbar-actions {
     position: relative !important;
   }
+
   .child-switcher-wrap,
   .profile-menu-wrap {
     position: static !important;
   }
+
   .dashboard-profile-menu,
   .child-dropdown {
     position: absolute !important;
@@ -2095,23 +2131,28 @@
     justify-content: center !important;
     gap: 6px !important;
   }
+
   .enrollment-steps-header {
     overflow: visible;
     gap: 8px;
   }
+
   .enrollment-step-tab {
     display: none;
     min-width: 0;
   }
+
   .enrollment-step-tab.active {
     display: inline-flex;
     flex: 1;
   }
+
   .enrollment-step-tab.active .enrollment-step-name {
     overflow: visible;
     text-overflow: clip;
     white-space: nowrap !important;
   }
+
   .enrollment-progress-nav {
     width: 40px;
     height: 40px;
@@ -2125,60 +2166,73 @@
     color: var(--primary);
     cursor: pointer;
   }
+
   .enrollment-progress-nav:disabled {
     opacity: 0.35;
     cursor: default;
   }
+
   .enrollment-step-content .justify-content-between {
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 12px !important;
   }
+
   .enrollment-step-content .justify-content-between>button {
     width: 100% !important;
     justify-content: center;
   }
+
   .enrollment-level-options {
     flex-direction: column !important;
     align-items: stretch;
     gap: 10px !important;
   }
+
   .enrollment-level-options [data-level-select] {
     width: 100%;
     justify-content: center;
     white-space: normal;
     text-align: center;
   }
+
   .enrollment-batch-options .batch-item {
     flex-direction: column;
     align-items: stretch;
   }
+
   .enrollment-batch-options .batch-item .badge {
     align-self: flex-start;
   }
+
   .att-calendar-header {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
   }
+
   .att-calendar-header #cal-title {
     width: 100%;
     text-align: center;
   }
+
   .att-calendar-header .att-legend {
     width: 100%;
     justify-content: center;
     gap: 12px;
   }
+
   .att-calendar-header .att-calendar-nav {
     width: 100%;
     justify-content: center;
   }
+
   .fees-tab-grid {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
-  .fees-tab-grid> * {
+
+  .fees-tab-grid>* {
     min-width: 0;
     width: 100%;
   }

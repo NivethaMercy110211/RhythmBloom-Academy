@@ -39,8 +39,8 @@
     .prog-section { padding-block: 88px; }
     .prog-section:nth-child(even) { background: var(--bg-secondary); }
     .prog-inner { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:stretch; }
-    .prog-inner.reverse { direction:rtl; }
-    .prog-inner.reverse > * { direction:ltr; }
+    .prog-inner.reverse > .prog-img-wrap { order: 2; }
+    .prog-inner.reverse > .prog-content { order: 1; }
     .prog-img-wrap { position:relative; border-radius:var(--radius-xl); overflow:hidden; height:100%; width:100%; display:flex; }
     .prog-img-wrap img { width:100%; height:100%; min-height:100%; object-fit:cover; display:block; transition:transform var(--trans-slow); }
     .prog-img-wrap:hover img { transform:scale(1.04); }
@@ -82,7 +82,10 @@
     .program-anchor-nav-inner { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; max-width:var(--container-max); margin:0 auto; }
     @media(max-width:900px){
       .prog-inner { grid-template-columns:1fr; gap:32px; }
-      .prog-inner.reverse { direction:ltr; }
+      .prog-inner > .prog-img-wrap,
+      .prog-inner.reverse > .prog-img-wrap { order: 1 !important; }
+      .prog-inner > .prog-content,
+      .prog-inner.reverse > .prog-content { order: 2 !important; }
       .prog-img-wrap img { height:280px; }
       .batch-cards { grid-template-columns:1fr 1fr; }
     }
@@ -97,22 +100,22 @@
         width:100%;
         justify-content:flex-start;
       }
-      .prog-highlights {
+      html:not([dir="rtl"]) .prog-highlights {
         text-align:left !important;
       }
-      .prog-highlight {
+      html:not([dir="rtl"]) .prog-highlight {
         display:grid;
         grid-template-columns:24px minmax(0, 1fr);
         align-items:start;
         gap:12px;
         text-align:left;
       }
-      .prog-highlight i {
+      html:not([dir="rtl"]) .prog-highlight i {
         width:24px;
         margin-top:2px;
         text-align:center;
       }
-      .prog-highlight span {
+      html:not([dir="rtl"]) .prog-highlight span {
         min-width:0;
         text-align:left;
       }

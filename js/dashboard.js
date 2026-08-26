@@ -40,17 +40,25 @@
     ════════════════════════════════════════ */
     const sidebar = document.querySelector('.dashboard-sidebar');
     const mobileToggle = document.querySelector('.dashboard-mobile-toggle');
+    const sidebarClose = document.querySelector('.sidebar-close-btn');
 
     if (mobileToggle && sidebar) {
+      const setSidebarOpen = isOpen => {
+        sidebar.classList.toggle('open', isOpen);
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      };
+
       mobileToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
+        setSidebarOpen(!sidebar.classList.contains('open'));
       });
+
+      sidebarClose?.addEventListener('click', () => setSidebarOpen(false));
 
       document.addEventListener('click', e => {
         if (sidebar.classList.contains('open') &&
           !sidebar.contains(e.target) &&
           !mobileToggle.contains(e.target)) {
-          sidebar.classList.remove('open');
+          setSidebarOpen(false);
         }
       });
     }

@@ -358,7 +358,8 @@
 .auth-social-btn {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
   height: 46px;
   padding: 0 20px;
@@ -390,11 +391,17 @@
   font-size: 18px;
 }
 
+.auth-social-svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .auth-social-icon.google { color: #EA4335; }
 .auth-social-icon.facebook { color: #1877F2; }
 
 .auth-social-label {
-  flex: 1;
+  flex: 0 0 auto;
   text-align: center;
 }
 
@@ -439,26 +446,95 @@
   color: var(--primary);
 }
 
-/* ── Responsive View (Laptop & Mobile) ── */
+/* ── Responsive Auth View (Tablet & Mobile) ── */
 @media (max-width: 1024px) {
   .auth-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
   }
 
   .auth-visual-pane {
-    display: none;
+    display: flex !important;
+    width: 100%;
+    min-height: 260px;
+    padding: 36px 28px 28px;
+    background: linear-gradient(135deg, var(--primary) 0%, #4E2C53 100%);
+    box-sizing: border-box;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .auth-visual-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+  }
+
+  .auth-brand {
+    margin-inline: auto !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .auth-visual-pane h2 {
+    font-size: clamp(1.35rem, 4vw, 1.85rem) !important;
+    margin-bottom: 8px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+  }
+
+  .auth-visual-pane p {
+    font-size: var(--text-sm) !important;
+    max-width: 100% !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+  }
+
+  .auth-visual-stats,
+  .auth-visual-badges {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+  }
+
+  .auth-visual-stats > div,
+  .auth-visual-badges > div {
+    text-align: center !important;
+    justify-content: center !important;
   }
 
   .auth-form-pane {
-    padding: 60px 24px 40px;
-    min-height: 100vh;
+    padding: 40px 24px 36px;
+    min-height: auto;
+    flex: 1;
     justify-content: center;
+    text-align: center !important;
+  }
+
+  .auth-card {
+    margin-inline: auto !important;
+    text-align: center !important;
   }
 }
 
 @media (max-width: 480px) {
+  .auth-visual-pane {
+    padding: 24px 18px 20px;
+    min-height: 220px;
+  }
+
   .auth-form-pane {
-    padding: 48px 18px 28px;
+    padding: 28px 16px 28px;
   }
 
   .auth-card {
@@ -485,4 +561,13 @@
 [data-theme="dark"] .auth-social-btn:hover {
   background: var(--primary-subtle);
   border-color: var(--primary);
+}
+
+/* ── Hide Scroll to Top Button on Auth Pages ── */
+.auth-page #back-to-top,
+.auth-page .back-to-top-btn {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
