@@ -554,6 +554,42 @@
   }
 }
 
+/* ════════════════════════════════════════════════════════════════
+   HOME 1 BANNER – iPAD MINI (577px – 820px) LEFT-ALIGN OVERRIDE
+   Overrides the wider tablet centering so hero content, buttons
+   and stat items are left-aligned on iPad mini.
+   ════════════════════════════════════════════════════════════════ */
+@media (min-width: 577px) and (max-width: 820px) {
+  .hero-content {
+    text-align: left !important;
+    margin-inline: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .hero-badge {
+    margin-inline: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .hero-actions {
+    justify-content: flex-start !important;
+    margin-inline: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .hero-stats {
+    justify-content: flex-start !important;
+    margin-inline: 0 !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+  }
+
+  .hero-stat {
+    text-align: left !important;
+    justify-self: start !important;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --container-px: 20px;
@@ -648,5 +684,21 @@
 
   .auth-form-pane {
     padding: 32px 24px;
+  }
+}
+
+/* ══ iPad mini final override – hero buttons left-aligned ══
+   Must come AFTER the max-width:768px block so it wins the cascade. */
+@media (min-width: 577px) and (max-width: 820px) {
+  .hero-actions {
+    justify-content: flex-start !important;
+    margin-inline: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary,
+  .hero-actions .btn-ghost {
+    min-width: 160px !important;
   }
 }

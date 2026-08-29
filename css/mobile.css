@@ -175,6 +175,7 @@ img, iframe, video, object, embed {
   /* ── Levels ── */
   .level-grid { grid-template-columns: 1fr !important; gap: 14px; }
   .level-card { padding: 28px 22px; }
+  .level-desc { min-height: 0; }
   .level-tags {
     display: grid;
     grid-template-columns: 1fr !important;

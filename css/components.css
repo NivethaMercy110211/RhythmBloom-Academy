@@ -465,11 +465,14 @@
 }
 
 .level-desc {
+  width: 100%;
+  min-height: calc(1.7em * 4);
   font-size: var(--text-sm);
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 20px;
   flex: 1;
+  text-wrap: balance;
 }
 
 .level-tags {
@@ -1336,6 +1339,63 @@ select.form-control { cursor: pointer; }
 
 [data-theme="dark"] .rb-footer {
   background: #110E12;
+}
+
+/* ── Light theme footer ── */
+[data-theme="light"] .rb-footer {
+  background: #ffffff;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+}
+
+[data-theme="light"] .footer-brand-name {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .footer-brand-tagline {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .footer-about {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .footer-col-title {
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .footer-links a {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .footer-links a:hover {
+  color: var(--primary);
+}
+
+[data-theme="light"] .footer-contact-item {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .footer-social-link {
+  background: rgba(0,0,0,0.05);
+  border-color: var(--border);
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .footer-bottom {
+  border-top-color: var(--border);
+}
+
+[data-theme="light"] .footer-copy {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .footer-bottom-links a {
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .footer-bottom-links a:hover {
+  color: var(--text-primary);
 }
 
 .footer-grid {
